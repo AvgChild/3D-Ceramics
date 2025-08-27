@@ -1,0 +1,39 @@
+{
+  "version": "1.0",
+  "name": "Simple GLB Scene",
+  "models": [
+    {
+      "id": "model",
+      "src": "model.glb",
+      "transform": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ],
+  "camera": {
+    "position": [
+      0,
+      0,
+      2
+    ],
+    "target": [
+      0,
+      0,
+      0
+    ]
+  }
+}
