@@ -1,23 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Voyager 3D Viewer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/gh/smithsonian/dpo-voyager@latest/assets/fonts/fonts.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+	<!-- This optional line provides a custom Voyager icon used for favorite/bookmarked pages. -->
+	<link rel="shortcut icon" type="image/png" href="https://cdn.jsdelivr.net/gh/smithsonian/dpo-voyager@latest/assets/favicon.png"/>
+	
+	<!-- This stylesheet is recommended to load custom Voyager fonts. Not required, but may result in suboptimal UI without it. -->
+	<link href="https://cdn.jsdelivr.net/gh/smithsonian/dpo-voyager@latest/assets/fonts/fonts.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Voyager 3D Viewer</h1>
-    <p class="subtitle">This loads a Smithsonian sample so you can verify deployment. Replace with your Space URL when ready.</p>
-  </header>
-
- <voyager-explorer
-  style="display:block;width:100%;height:80vh;background:#000"
- root="https://3d-api.si.edu/voyager/3d_package:341c96cd-f967-4540-8ed1-d3fc56d31f12"
-document="document.json"
-</voyager-explorer>
-<script src="https://3d-api.si.edu/resources/js/voyager-explorer.min.js"></script>
+	<!-- This is the required Voyager tag. Customization can be done here via attributes. -->
+	<!-- The 'root' attribute is the base path to your scene assets. -->
+	<!-- The 'document' attribute is the name of your scene file -->
+	<voyager-explorer root='https://3d-api.si.edu/content/document/341c96cd-f967-4540-8ed1-d3fc56d31f12/' document='document.json'></voyager-explorer>
+	
+	<!-- This is the required javascript file for the Voyager element. -->
+	<script src="https://3d-api.si.edu/resources/js/voyager-explorer.min.js"></script>
 </body>
 </html>
