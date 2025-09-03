@@ -1,0 +1,15 @@
+[
+  {
+    "id": "your-space-example",
+    "title": "Dryden Wells Bowl",
+    "description": "Replace this with your own Space URLs.",
+    "tags": [
+      "soda fired",
+      "bowl"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.cdn.digitaloceanspaces.com/my-scene/Thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.cdn.digitaloceanspaces.com/my-scene/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.cdn.digitaloceanspaces.com/my-scene/"
+  }
+]

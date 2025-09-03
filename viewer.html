@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Viewer</title>
+  <link href="https://cdn.jsdelivr.net/gh/smithsonian/dpo-voyager@latest/assets/fonts/fonts.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="viewer-page">
+  <header class="site-header">
+    <a href="index.html" class="back">← Back to Collection</a>
+    <h1 id="itemTitle">Viewer</h1>
+  </header>
+
+  <main>
+    <voyager-explorer id="viewer" style="display:block;width:100%;height:70vh;background:#000"></voyager-explorer>
+    <section class="details">
+      <p id="itemDesc"></p>
+      <div class="actions">
+        <a id="downloadBtn" class="btn" href="#" download>Download model</a>
+        <a id="openJson" class="btn" href="#" target="_blank" rel="noopener">Open scene JSON</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://3d-api.si.edu/resources/js/voyager-explorer.min.js"></script>
+  <script src="js/viewer.js"></script>
+</body>
+</html>

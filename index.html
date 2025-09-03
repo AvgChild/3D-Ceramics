@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>3D Ceramic Archive</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>3D Ceramic Archive</h1>
+    <div class="controls">
+      <input id="search" type="search" placeholder="Search models…" aria-label="Search models" />
+      <select id="tagFilter" aria-label="Filter by tag">
+        <option value="">All tags</option>
+      </select>
+    </div>
+  </header>
+
+  <main>
+    <div id="grid" class="grid" aria-live="polite"></div>
+    <div id="empty" class="empty" hidden>No results</div>
+  </main>
+
+  <template id="card-tpl">
+    <a class="card" href="#">
+      <img loading="lazy" alt="" />
+      <div class="meta">
+        <h3 class="title"></h3>
+        <p class="tags"></p>
+      </div>
+    </a>
+  </template>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
