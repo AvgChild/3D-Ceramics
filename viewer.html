@@ -3,32 +3,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Viewer</title>
+  <title>3D Viewer</title>
+
+  <!-- Voyager font assets -->
   <link href="https://cdn.jsdelivr.net/gh/smithsonian/dpo-voyager@latest/assets/fonts/fonts.css" rel="stylesheet">
+
+  <!-- Your site stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body class="viewer-page">
+
+  <!-- Header -->
   <header class="site-header">
     <a href="index.html" class="back">← Back to Collection</a>
     <h1 id="itemTitle">Viewer</h1>
 
     <div class="header-actions">
-    <a id="downloadBtn" class="btn" href="#" download>Download model</a>
-  </div>
+      <a id="downloadBtn" class="btn" href="#" download>Download model</a>
+      <a id="openJson" class="btn" href="#" target="_blank" rel="noopener">Open JSON</a>
+    </div>
   </header>
 
-  <main>
-    <voyager-explorer id="viewer" style="display:block;width:100%;height:70vh;background:#000"></voyager-explorer>
-    <section class="details">
-      <p id="itemDesc"></p>
-      <div class="actions">
-        <a id="downloadBtn" class="btn" href="#" download>Download model</a>
-        <a id="openJson" class="btn" href="#" target="_blank" rel="noopener">Open scene JSON</a>
-      </div>
+  <!-- Layout: viewer left, details right -->
+  <main class="viewer-layout">
+    <!-- Viewer -->
+    <section class="viewer-wrap">
+      <voyager-explorer id="viewer"></voyager-explorer>
     </section>
+
+    <!-- Details panel -->
+    <aside class="details-panel" aria-label="Object details">
+      <div class="details-panel__header">
+        <h2>Details</h2>
+      </div>
+
+      <details open class="dp-section">
+        <summary>Overview</summary>
+        <p id="itemDesc" class="dp-body">Loading…</p>
+      </details>
+
+      <details class="dp-section">
+        <summary>Metadata</summary>
+        <dl class="kv dp-body">
+          <div><dt>Published name</dt><dd id="metaName">—</dd></div>
+          <div><dt>Record ID</dt><dd id="metaId">—</dd></div>
+          <div><dt>License</dt><dd>CC0</dd></div>
+        </dl>
+      </details>
+    </aside>
   </main>
 
-  <script src="https://3d-api.si.edu/resources/js/voyager-explorer.min.js"></script>
-  <script src="js/viewer.js"></script>
+  <!-- Voyager JS -->
+  <script src="https://3d-api.si.edu/resources/js/voyager-explorer.min.js" defer></script>
+
+  <!-- Custom wiring -->
+  <script>
+  (async () => {
+    // Grab ?id= from URL
+    const params = new URL(location.href).searchParams;
+    const id = params.get('id');
+
+    // Load catalog
+    const items = await fetch('catalog/catalog.json', {cache:'no-store'}).then(r=>r.json());
+    const item = items.find(i=>i.id===id) || items[0];
+
+    // Fill in header + panel
+    document.getElementById('itemTitle').textContent = item.title || 'Viewer';
+    document.getElementById('itemDesc').textContent  = item.description || '';
+    document.getElementById('metaName').textContent  = item.metaName || item.title || '—';
+    document.getElementById('metaId').textContent    = item.id || '—';
+
+    // Wire JSON link
+    document.getElementById('openJson').href = item.root + item.document;
+
+    // Wire download (prefer explicit field)
+    const dlEl = document.getElementById('downloadBtn');
+    if (item.download){
+      dlEl.href = item.download;
+    } else {
+      try {
+        const scene = await fetch(item.root + item.document, {mode:'cors'}).then(r=>r.json());
+        const src = scene?.models?.[0]?.src;
+        if (src) dlEl.href = new URL(src, item.root).toString();
+      } catch(e){
+        console.warn('Could not detect GLB from scene JSON', e);
+      }
+    }
+
+    // Initialize viewer
+    const viewer = document.getElementById('viewer');
+    viewer.setAttribute('root', item.root);
+    viewer.setAttribute('document', item.document);
+  })();
+  </script>
 </body>
 </html>
