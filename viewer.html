@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>3D Viewer</title>
 
-  <!-- Voyager font assets -->
+  <!-- Voyager font assets (optional but nice) -->
   <link href="https://cdn.jsdelivr.net/gh/smithsonian/dpo-voyager@latest/assets/fonts/fonts.css" rel="stylesheet">
 
-  <!-- Your site stylesheet -->
+  <!-- Your site stylesheet (the CSS you pasted) -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body class="viewer-page">
 
   <!-- Header -->
-  <header class="site-header">
+  <header class="site-header" id="siteHeader">
     <a href="index.html" class="back">← Back to Collection</a>
     <h1 id="itemTitle">Viewer</h1>
 
@@ -56,18 +56,18 @@
   <!-- Voyager JS -->
   <script src="https://3d-api.si.edu/resources/js/voyager-explorer.min.js" defer></script>
 
-  <!-- Custom wiring -->
+  <!-- Catalog wiring + viewer init -->
   <script>
   (async () => {
-    // Grab ?id= from URL
+    // Get ?id= from URL
     const params = new URL(location.href).searchParams;
     const id = params.get('id');
 
     // Load catalog
-    const items = await fetch('catalog/catalog.json', {cache:'no-store'}).then(r=>r.json());
-    const item = items.find(i=>i.id===id) || items[0];
+    const items = await fetch('catalog/catalog.json', { cache: 'no-store' }).then(r => r.json());
+    const item = items.find(i => i.id === id) || items[0];
 
-    // Fill in header + panel
+    // Fill header + side panel
     document.getElementById('itemTitle').textContent = item.title || 'Viewer';
     document.getElementById('itemDesc').textContent  = item.description || '';
     document.getElementById('metaName').textContent  = item.metaName || item.title || '—';
@@ -76,25 +76,39 @@
     // Wire JSON link
     document.getElementById('openJson').href = item.root + item.document;
 
-    // Wire download (prefer explicit field)
+    // Wire download (prefer explicit field; else sniff first model src)
     const dlEl = document.getElementById('downloadBtn');
-    if (item.download){
+    if (item.download) {
       dlEl.href = item.download;
     } else {
       try {
-        const scene = await fetch(item.root + item.document, {mode:'cors'}).then(r=>r.json());
+        const scene = await fetch(item.root + item.document, { mode: 'cors' }).then(r => r.json());
         const src = scene?.models?.[0]?.src;
         if (src) dlEl.href = new URL(src, item.root).toString();
-      } catch(e){
+      } catch (e) {
         console.warn('Could not detect GLB from scene JSON', e);
       }
     }
 
-    // Initialize viewer
+    // Initialize Voyager
     const viewer = document.getElementById('viewer');
     viewer.setAttribute('root', item.root);
     viewer.setAttribute('document', item.document);
   })();
   </script>
+
+  <!-- Offset main content below the header (handles real header height at runtime) -->
+  <script>
+    function offsetForHeader() {
+      const header = document.getElementById('siteHeader');
+      const main   = document.querySelector('main.viewer-layout');
+      if (!header || !main) return;
+      const h = header.getBoundingClientRect().height;
+      main.style.paddingTop = (h + 8) + 'px';
+    }
+    addEventListener('load', offsetForHeader);
+    addEventListener('resize', offsetForHeader);
+  </script>
+
 </body>
 </html>

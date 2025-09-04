@@ -11,7 +11,7 @@ body{
   color:#222
 }
 .site-header{
-  position: fixed;          /* was sticky */
+  position: sticky;          /* was sticky */
   top: 0; left: 0; right: 0;
   height: var(--header-h);  /* explicit height */
   display:flex;
@@ -75,7 +75,7 @@ body{
 .viewer-page main{
   padding-top:var(--header-h);
 }
-
+.viewer-page .site-header { position: fixed; left:0; right:0; top:0; z-index:1000; }
 .viewer-page voyager-explorer{
   display:block;
   width:100%;
