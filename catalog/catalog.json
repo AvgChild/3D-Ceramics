@@ -1,6 +1,6 @@
 [
   {
-    "id": "your-space-example",
+    "id": "Dryden Wells Bowl",
     "title": "Dryden Wells Bowl",
     "description": "Soda Fired Bowl by Dryden Wells c.2014",
     "tags": [
@@ -11,5 +11,18 @@
     "root": "https://1ceramicsga.sfo3.cdn.digitaloceanspaces.com/my-scene/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.cdn.digitaloceanspaces.com/my-scene/Wells_dryden_Bowl_GBL.glb"
+  },
+  {
+    "id": "Chris Alveshere Mug",
+    "title": "Chris Alveshere Mug",
+    "description": "by Chris Alveshere c.2023",
+    "tags": [
+      "Matte Glaze",
+      "Mug"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.cdn.digitaloceanspaces.com/ChrisAlveshere/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.cdn.digitaloceanspaces.com/ChrisAlveshere/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.cdn.digitaloceanspaces.com/ChrisAlveshere/Alveshere_Chris_GLB.glb"
   }
 ]
