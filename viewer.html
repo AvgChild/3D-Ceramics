@@ -8,268 +8,23 @@
   <!-- Voyager font assets (optional but nice) -->
   <link href="https://cdn.jsdelivr.net/gh/smithsonian/dpo-voyager@latest/assets/fonts/fonts.css" rel="stylesheet">
 
-  <!-- Your site stylesheet -->
+  <!-- Your site stylesheet (the CSS you pasted) -->
   <link rel="stylesheet" href="css/style.css" />
-  
-  <style>
-    /* Floating Control Panel Styles */
-    :root{
-      --gap:14px;
-      --card-radius:16px;
-    }
-
-    *{box-sizing:border-box}
-
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      background:#757575;
-      color:#222;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    /* ===== FLOATING CONTROL PANEL ===== */
-    .floating-controls {
-      position: fixed;
-      left: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 1000;
-      background: rgba(243, 231, 98, 0.95);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 16px;
-      padding: 16px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-      min-width: 200px;
-      transition: all 0.3s ease;
-      animation: slideInLeft 0.6s ease-out;
-    }
-
-    .floating-controls:hover {
-      background: rgba(243, 231, 98, 1);
-      transform: translateY(-50%) scale(1.02);
-    }
-
-    .control-item {
-      margin-bottom: 12px;
-    }
-
-    .control-item:last-child {
-      margin-bottom: 0;
-    }
-
-    .panel-title {
-      margin: 0;
-      font-size: 18px;
-      font-weight: 600;
-      color: #333;
-      text-align: center;
-    }
-
-    .back-btn {
-      display: inline-block;
-      text-decoration: none;
-      color: #333;
-      padding: 8px 12px;
-      border: 1px solid rgba(0, 0, 0, 0.2);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.8);
-      font-size: 14px;
-      transition: all 0.2s ease;
-      width: 100%;
-      text-align: center;
-    }
-
-    .back-btn:hover {
-      background: rgba(255, 255, 255, 1);
-      transform: translateY(-1px);
-    }
-
-    .control-actions {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .panel-btn {
-      display: inline-block;
-      text-decoration: none;
-      color: #333;
-      padding: 10px 12px;
-      border: 1px solid rgba(0, 0, 0, 0.2);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.8);
-      font-size: 14px;
-      text-align: center;
-      transition: all 0.2s ease;
-    }
-
-    .panel-btn:hover {
-      background: rgba(255, 255, 255, 1);
-      transform: translateY(-1px);
-    }
-
-    /* ===== MAIN LAYOUT ===== */
-    .viewer-layout{
-      display: grid;
-      grid-template-columns: 1fr 360px;
-      gap: 0;
-      height: 100vh;
-      padding: 0;
-    }
-
-    .viewer-wrap {
-      position: relative;
-    }
-
-    .viewer-wrap voyager-explorer{
-      display: block;
-      width: 100%;
-      height: 100vh;
-      background: #000;
-      border: none;
-      border-radius: 0;
-    }
-
-    /* Right details panel */
-    .details-panel{
-      background: #fff;
-      border-left: 1px solid #eee;
-      padding: 20px;
-      overflow-y: auto;
-      height: 100vh;
-    }
-
-    .details-panel__header{
-      padding-bottom: 16px;
-      border-bottom: 1px solid #f0f0f0;
-      margin-bottom: 16px;
-    }
-
-    .details-panel h2{
-      margin: 0;
-      font-size: 20px;
-      color: #333;
-    }
-
-    /* Collapsible sections */
-    .dp-section{
-      margin: 16px 0;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .dp-section > summary{
-      cursor: pointer;
-      list-style: none;
-      padding: 12px 16px;
-      background: #f8f9fa;
-      border: 1px solid #eee;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 16px;
-    }
-
-    .dp-section[open] > summary{
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-      border-bottom: none;
-    }
-
-    .dp-body{
-      border: 1px solid #eee;
-      border-top: none;
-      padding: 16px;
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
-      background: #fff;
-    }
-
-    /* Key/Value list */
-    .kv{ margin: 0; }
-    .kv div{ 
-      display: grid; 
-      grid-template-columns: 1fr 1fr; 
-      gap: 12px; 
-      padding: 8px 0; 
-      border-bottom: 1px dashed #eee; 
-    }
-    .kv div:last-child{ border-bottom: 0; }
-    .kv dt{ color: #555; font-weight: 600; }
-    .kv dd{ margin: 0; word-break: break-word; }
-
-    /* Animations */
-    @keyframes slideInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-100px) translateY(-50%);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0) translateY(-50%);
-      }
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 960px){
-      .viewer-layout{
-        grid-template-columns: 1fr;
-      }
-      
-      .details-panel{
-        display: none;
-      }
-      
-      .floating-controls {
-        left: 10px;
-        min-width: 160px;
-        padding: 12px;
-      }
-      
-      .panel-title {
-        font-size: 16px;
-      }
-      
-      .panel-btn, .back-btn {
-        padding: 8px 10px;
-        font-size: 13px;
-      }
-    }
-
-    @media (max-width: 640px){
-      .floating-controls {
-        left: 8px;
-        min-width: 140px;
-        padding: 10px;
-      }
-      
-      .control-actions {
-        gap: 6px;
-      }
-    }
-  </style>
 </head>
 <body class="viewer-page">
 
-  <!-- Floating Control Panel (REPLACES the old header) -->
-  <div class="floating-controls" id="floatingControls">
-    <div class="control-item">
-      <a href="index.html" class="back-btn">← Back to Collection</a>
-    </div>
-    
-    <div class="control-item">
-      <h2 id="itemTitle" class="panel-title">Viewer</h2>
-    </div>
-    
-    <div class="control-actions">
-      <a id="downloadBtn" class="panel-btn" href="#" download>📥 Download model</a>
-      <a id="openJson" class="panel-btn" href="#" target="_blank" rel="noopener">📄 Open JSON</a>
-    </div>
-  </div>
+  <!-- Header -->
+  <header class="site-header" id="siteHeader">
+    <a href="index.html" class="back">← Back to Collection</a>
+    <h1 id="itemTitle">Viewer</h1>
 
-  <!-- Layout: viewer left, details right (NO header offset needed now) -->
+    <div class="header-actions">
+      <a id="downloadBtn" class="btn" href="#" download>Download model</a>
+      <a id="openJson" class="btn" href="#" target="_blank" rel="noopener">Open JSON</a>
+    </div>
+  </header>
+
+  <!-- Layout: viewer left, details right -->
   <main class="viewer-layout">
     <!-- Viewer -->
     <section class="viewer-wrap">
@@ -301,7 +56,7 @@
   <!-- Voyager JS -->
   <script src="https://3d-api.si.edu/resources/js/voyager-explorer.min.js" defer></script>
 
-  <!-- Catalog wiring + viewer init (UNCHANGED from your original) -->
+  <!-- Catalog wiring + viewer init -->
   <script>
   (async () => {
     // Get ?id= from URL
@@ -342,7 +97,18 @@
   })();
   </script>
 
-  <!-- REMOVED: The offsetForHeader script is no longer needed -->
+  <!-- Offset main content below the header (handles real header height at runtime) -->
+  <script>
+    function offsetForHeader() {
+      const header = document.getElementById('siteHeader');
+      const main   = document.querySelector('main.viewer-layout');
+      if (!header || !main) return;
+      const h = header.getBoundingClientRect().height;
+      main.style.paddingTop = (h + 8) + 'px';
+    }
+    addEventListener('load', offsetForHeader);
+    addEventListener('resize', offsetForHeader);
+  </script>
 
 </body>
 </html>
