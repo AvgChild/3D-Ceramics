@@ -1,36 +1,192 @@
 :root{
   --gap:14px;
   --card-radius:16px;
-  --header-h:68px; /* 👈 added: define header height */
 }
+
 *{box-sizing:border-box}
+
 body{
   margin:0;
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
   background:#757575;
-  color:#222
+  color:#222;
+  height: 100vh;
+  overflow: hidden; /* Prevent body scroll since viewer handles its own */
 }
-.site-header{
-  position: sticky;          /* was sticky */
-  top: 0; left: 0; right: 0;
-  height: var(--header-h);  /* explicit height */
-  display:flex;
-  align-items:center;
-  gap:16px;
-  padding:0 20px;           /* remove vertical padding now that height is fixed */
-  background:#f3e762;
-  border-bottom:1px solid #eee;
+
+/* ===== FLOATING CONTROL PANEL (REPLACES OLD HEADER) ===== */
+.floating-controls {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 1000;
+  background: rgba(243, 231, 98, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  min-width: 200px;
+  transition: all 0.3s ease;
+  animation: slideInLeft 0.6s ease-out;
 }
-.site-header h1{
-  margin:0;
-  font-size:20px;
-  flex:1;
+
+.floating-controls:hover {
+  background: rgba(243, 231, 98, 1);
+  transform: translateY(-50%) scale(1.02);
 }
-.header-actions {
-  display:flex;
-  gap:10px;
+
+.control-item {
+  margin-bottom: 12px;
 }
+
+.control-item:last-child {
+  margin-bottom: 0;
+}
+
+.panel-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+.back-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  padding: 8px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  transition: all 0.2s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-1px);
+}
+
+.control-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.panel-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  padding: 10px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.panel-btn:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-1px);
+}
+
+/* ===== MAIN LAYOUT (NO HEADER OFFSET NEEDED) ===== */
+.viewer-layout{
+  display: grid;
+  grid-template-columns: 1fr 360px;    /* viewer | details */
+  gap: 0;
+  height: 100vh;
+  padding: 0;
+}
+
+/* Viewer area - full height */
+.viewer-wrap {
+  position: relative;
+}
+
+.viewer-wrap voyager-explorer{
+  display: block;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  border: none;
+  border-radius: 0;
+}
+
+/* Right details panel */
+.details-panel{
+  background: #fff;
+  border-left: 1px solid #eee;
+  padding: 20px;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.details-panel__header{
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 16px;
+}
+
+.details-panel h2{
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+/* Collapsible sections */
+.dp-section{
+  margin: 16px 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.dp-section > summary{
+  cursor: pointer;
+  list-style: none;                 /* hide default marker */
+  padding: 12px 16px;
+  background: #f8f9fa;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.dp-section[open] > summary{
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: none;
+}
+
+.dp-body{
+  border: 1px solid #eee;
+  border-top: none;
+  padding: 16px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: #fff;
+}
+
+/* Key/Value list */
+.kv{ margin: 0; }
+.kv div{ 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 12px; 
+  padding: 8px 0; 
+  border-bottom: 1px dashed #eee; 
+}
+.kv div:last-child{ border-bottom: 0; }
+.kv dt{ color: #555; font-weight: 600; }
+.kv dd{ margin: 0; word-break: break-word; }
+
+/* ===== HOMEPAGE STYLES (FOR index.html) ===== */
 .controls{
   margin-left:auto;
   display:flex;
@@ -50,6 +206,7 @@ body{
   gap:var(--gap);
   padding:var(--gap)
 }
+
 .card{
   display:block;
   border-radius:var(--card-radius);
@@ -60,144 +217,65 @@ body{
   color:inherit;
   box-shadow:0 1px 2px rgba(0,0,0,.05)
 }
+
 .card img{
   width:100%;
   height:160px;
   object-fit:cover;
   background:#000
 }
+
 .card .meta{padding:10px 12px}
 .card .title{margin:.2rem 0 .3rem;font-size:16px;line-height:1.25}
 .card .tags{margin:0;color:#666;font-size:12px}
 .empty{padding:40px;text-align:center;color:#666}
 
-/* 👇 added: offset main content so viewer starts below header */
-.viewer-page main{
-  padding-top:var(--header-h);
-}
-.viewer-page .site-header { position: fixed; left:0; right:0; top:0; z-index:1000; }
-.viewer-page voyager-explorer{
-  display:block;
-  width:100%;
-  height:70vh;
-  background:#000;
-  border-top:1px solid #eee;
-  border-bottom:1px solid #eee
-}
-.details{padding:16px 20px}
-.actions{display:flex;gap:10px;margin-top:8px}
-.btn{
-  display:inline-block;
-  padding:10px 14px;
-  border:1px solid #ddd;
-  border-radius:10px;
-  text-decoration:none;
-  color:inherit;
-  background:#fff
-}
-.back{
-  text-decoration:none;
-  color:inherit;
-  padding:6px 10px;
-  border:1px solid #ddd;
-  border-radius:8px;
-  background:#fff
-}
-/* Layout */
-.viewer-layout{
-  display:grid;
-  grid-template-columns: 1fr 360px;    /* viewer | details */
-  gap: 16px;
-  padding: 16px 20px;
+/* ===== ANIMATIONS ===== */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px) translateY(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) translateY(-50%);
+  }
 }
 
-/* Viewer area */
-.viewer-wrap voyager-explorer{
-  display:block;
-  width:100%;
-  height:70vh;
-  background:#000;
-  border:1px solid #eee;
-  border-radius:12px;
-  overflow:hidden;
-}
-
-/* Right details panel */
-.details-panel{
-  position: sticky;
-  top: calc(var(--header-h,72px) + 12px);
-  align-self: start;
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 12px;
-  padding: 12px 12px 6px;
-  box-shadow: 0 1px 2px rgba(0,0,0,.05);
-}
-.details-panel__header{
-  padding: 6px 6px 8px;
-  border-bottom: 1px solid #f0f0f0;
-}
-.details-panel h2{
-  margin: 0;
-  font-size: 18px;
-}
-
-/* Collapsible sections */
-.dp-section{
-  margin: 8px 0;
-  border-radius: 10px;
-  overflow: clip;
-}
-.dp-section > summary{
-  cursor: pointer;
-  list-style: none;                 /* hide default marker */
-  padding: 10px 10px;
-  background: #fafafa;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  font-weight: 600;
-}
-.dp-section[open] > summary{
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.dp-body{
-  border: 1px solid #eee;
-  border-top: none;
-  padding: 10px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-
-/* Key/Value list */
-.kv{ margin: 0; }
-.kv div{ display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 6px 0; border-bottom: 1px dashed #eee; }
-.kv div:last-child{ border-bottom: 0; }
-.kv dt{ color:#555; font-weight:600; }
-.kv dd{ margin:0; }
-
-/* Buttons */
-.btn{
-  display:inline-block;
-  margin: 4px 4px 0 0;
-  padding:10px 14px;
-  border:1px solid #ddd;
-  border-radius:10px;
-  text-decoration:none;
-  color:inherit;
-  background:#fff;
-}
-
-/* Responsive: stack on mobile */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 960px){
   .viewer-layout{
     grid-template-columns: 1fr;
   }
+  
   .details-panel{
-    position: static;
-    top: auto;
+    display: none; /* Hide on mobile, or make it a toggle */
   }
-  .viewer-wrap voyager-explorer{
-    height: 60vh;
+  
+  .floating-controls {
+    left: 10px;
+    min-width: 160px;
+    padding: 12px;
+  }
+  
+  .panel-title {
+    font-size: 16px;
+  }
+  
+  .panel-btn, .back-btn {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 640px){
+  .floating-controls {
+    left: 8px;
+    min-width: 140px;
+    padding: 10px;
+  }
+  
+  .control-actions {
+    gap: 6px;
   }
 }
