@@ -25,5 +25,18 @@
     "root": "https://1ceramicsga.sfo3.cdn.digitaloceanspaces.com/ChrisAlveshere/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.cdn.digitaloceanspaces.com/ChrisAlveshere/Alveshere_Chris_GLB.glb"
+  },
+  {
+    "id": "Funeral Vase - Ming Dynasty",
+    "title": "Funeral Vase - Ming Dynasty",
+    "description": "Stoneware, date unknown",
+    "tags": [
+      "stoneware",
+      "ming"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.cdn.digitaloceanspaces.com/FuneralVase/thumbnail.png",
+    "root": "https://1ceramicsga.sfo3.cdn.digitaloceanspaces.com/FuneralVase/Funeral%20Vase.glb",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.cdn.digitaloceanspaces.com/FuneralVase/Funeral%20Vase.glb"
   }
 ]
