@@ -4,25 +4,330 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>3D Viewer</title>
-
-  <!-- Voyager font assets (optional but nice) -->
   <link href="https://cdn.jsdelivr.net/gh/smithsonian/dpo-voyager@latest/assets/fonts/fonts.css" rel="stylesheet">
+  <style>
+    :root{
+      --gap:14px;
+      --card-radius:16px;
+    }
 
-  <!-- Your site stylesheet (the CSS you pasted) -->
-  <link rel="stylesheet" href="css/style.css" />
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      background:#757575;
+      color:#222;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* ===== COLLAPSIBLE FLOATING CONTROL PANEL ===== */
+    .floating-controls {
+      position: fixed;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1000;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: slideInLeft 0.6s ease-out;
+    }
+
+    /* Panel content */
+    .panel-content {
+      background: rgba(243, 231, 98, 0.95);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      min-width: 200px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-origin: left center;
+    }
+
+    .panel-content:hover {
+      background: rgba(243, 231, 98, 1);
+    }
+
+    /* Collapse tab */
+    .collapse-tab {
+      position: absolute;
+      right: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(243, 231, 98, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-left: none;
+      border-radius: 0 12px 12px 0;
+      padding: 12px 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .collapse-tab:hover {
+      background: rgba(243, 231, 98, 1);
+      right: -42px;
+    }
+
+    .collapse-tab::before {
+      content: '◀';
+      font-size: 16px;
+      color: #333;
+      transition: transform 0.3s ease;
+    }
+
+    /* Collapsed state */
+    .floating-controls.collapsed {
+      transform: translateY(-50%) translateX(-100%);
+    }
+
+    .floating-controls.collapsed .panel-content {
+      opacity: 0;
+      transform: scale(0.8);
+      pointer-events: none;
+    }
+
+    .floating-controls.collapsed .collapse-tab {
+      right: -20px;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .floating-controls.collapsed .collapse-tab::before {
+      content: '▶';
+      transform: none;
+    }
+
+    /* Panel content styles */
+    .control-item {
+      margin-bottom: 12px;
+    }
+
+    .control-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .panel-title {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+      color: #333;
+      text-align: center;
+    }
+
+    .back-btn {
+      display: inline-block;
+      text-decoration: none;
+      color: #333;
+      padding: 8px 12px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.8);
+      font-size: 14px;
+      transition: all 0.2s ease;
+      width: 100%;
+      text-align: center;
+    }
+
+    .back-btn:hover {
+      background: rgba(255, 255, 255, 1);
+      transform: translateY(-1px);
+    }
+
+    .control-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .panel-btn {
+      display: inline-block;
+      text-decoration: none;
+      color: #333;
+      padding: 10px 12px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.8);
+      font-size: 14px;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+
+    .panel-btn:hover {
+      background: rgba(255, 255, 255, 1);
+      transform: translateY(-1px);
+    }
+
+    /* ===== MAIN LAYOUT ===== */
+    .viewer-layout{
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 0;
+      height: 100vh;
+      padding: 0;
+    }
+
+    .viewer-wrap {
+      position: relative;
+    }
+
+    .viewer-wrap voyager-explorer{
+      display: block;
+      width: 100%;
+      height: 100vh;
+      background: #000;
+      border: none;
+      border-radius: 0;
+    }
+
+    /* Right details panel */
+    .details-panel{
+      background: #fff;
+      border-left: 1px solid #eee;
+      padding: 20px;
+      overflow-y: auto;
+      height: 100vh;
+    }
+
+    .details-panel__header{
+      padding-bottom: 16px;
+      border-bottom: 1px solid #f0f0f0;
+      margin-bottom: 16px;
+    }
+
+    .details-panel h2{
+      margin: 0;
+      font-size: 20px;
+      color: #333;
+    }
+
+    /* Collapsible sections */
+    .dp-section{
+      margin: 16px 0;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .dp-section > summary{
+      cursor: pointer;
+      list-style: none;
+      padding: 12px 16px;
+      background: #f8f9fa;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .dp-section[open] > summary{
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom: none;
+    }
+
+    .dp-body{
+      border: 1px solid #eee;
+      border-top: none;
+      padding: 16px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      background: #fff;
+    }
+
+    /* Key/Value list */
+    .kv{ margin: 0; }
+    .kv div{ 
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      gap: 12px; 
+      padding: 8px 0; 
+      border-bottom: 1px dashed #eee; 
+    }
+    .kv div:last-child{ border-bottom: 0; }
+    .kv dt{ color: #555; font-weight: 600; }
+    .kv dd{ margin: 0; word-break: break-word; }
+
+    /* Animations */
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-100px) translateY(-50%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0) translateY(-50%);
+      }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 960px){
+      .viewer-layout{
+        grid-template-columns: 1fr;
+      }
+      
+      .details-panel{
+        display: none;
+      }
+      
+      .floating-controls {
+        left: 10px;
+      }
+      
+      .panel-content {
+        min-width: 160px;
+        padding: 12px;
+      }
+      
+      .panel-title {
+        font-size: 16px;
+      }
+      
+      .panel-btn, .back-btn {
+        padding: 8px 10px;
+        font-size: 13px;
+      }
+    }
+
+    @media (max-width: 640px){
+      .floating-controls {
+        left: 8px;
+      }
+      
+      .panel-content {
+        min-width: 140px;
+        padding: 10px;
+      }
+      
+      .control-actions {
+        gap: 6px;
+      }
+    }
+  </style>
 </head>
 <body class="viewer-page">
 
-  <!-- Header -->
-  <header class="site-header" id="siteHeader">
-    <a href="index.html" class="back">← Back to Collection</a>
-    <h1 id="itemTitle">Viewer</h1>
-
-    <div class="header-actions">
-      <a id="downloadBtn" class="btn" href="#" download>Download model</a>
-      <a id="openJson" class="btn" href="#" target="_blank" rel="noopener">Open JSON</a>
+  <!-- Collapsible Floating Control Panel -->
+  <div class="floating-controls" id="floatingControls">
+    <div class="panel-content">
+      <div class="control-item">
+        <a href="index.html" class="back-btn">← Back to Collection</a>
+      </div>
+      
+      <div class="control-item">
+        <h2 id="itemTitle" class="panel-title">Viewer</h2>
+      </div>
+      
+      <div class="control-actions">
+        <a id="downloadBtn" class="panel-btn" href="#" download>📥 Download model</a>
+        <a id="openJson" class="panel-btn" href="#" target="_blank" rel="noopener">📄 Open JSON</a>
+      </div>
     </div>
-  </header>
+    
+    <!-- Collapse/Expand Tab -->
+    <div class="collapse-tab" id="collapseTab"></div>
+  </div>
 
   <!-- Layout: viewer left, details right -->
   <main class="viewer-layout">
@@ -59,24 +364,17 @@
   <!-- Catalog wiring + viewer init -->
   <script>
   (async () => {
-    // Get ?id= from URL
     const params = new URL(location.href).searchParams;
     const id = params.get('id');
-
-    // Load catalog
     const items = await fetch('catalog/catalog.json', { cache: 'no-store' }).then(r => r.json());
     const item = items.find(i => i.id === id) || items[0];
 
-    // Fill header + side panel
     document.getElementById('itemTitle').textContent = item.title || 'Viewer';
     document.getElementById('itemDesc').textContent  = item.description || '';
     document.getElementById('metaName').textContent  = item.metaName || item.title || '—';
     document.getElementById('metaId').textContent    = item.id || '—';
-
-    // Wire JSON link
     document.getElementById('openJson').href = item.root + item.document;
 
-    // Wire download (prefer explicit field; else sniff first model src)
     const dlEl = document.getElementById('downloadBtn');
     if (item.download) {
       dlEl.href = item.download;
@@ -90,24 +388,16 @@
       }
     }
 
-    // Initialize Voyager
     const viewer = document.getElementById('viewer');
     viewer.setAttribute('root', item.root);
     viewer.setAttribute('document', item.document);
   })();
-  </script>
 
-  <!-- Offset main content below the header (handles real header height at runtime) -->
-  <script>
-    function offsetForHeader() {
-      const header = document.getElementById('siteHeader');
-      const main   = document.querySelector('main.viewer-layout');
-      if (!header || !main) return;
-      const h = header.getBoundingClientRect().height;
-      main.style.paddingTop = (h + 8) + 'px';
-    }
-    addEventListener('load', offsetForHeader);
-    addEventListener('resize', offsetForHeader);
+  // Collapse/Expand functionality
+  document.getElementById('collapseTab').addEventListener('click', function() {
+    const panel = document.getElementById('floatingControls');
+    panel.classList.toggle('collapsed');
+  });
   </script>
 
 </body>
