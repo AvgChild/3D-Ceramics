@@ -1,44 +1,42 @@
 [
   {
-    "id": "Dryden Wells Bowl",
-    "title": "Dryden Wells Bowl",
-    "description": "Soda Fired Ceramic Bowl c. 2014",
+    "id": "FuneralVase",
+    "title": "FuneralVase",
+    "description": "Elegant ceramic vase showcasing traditional craftsmanship",
     "tags": [
-      "Soda",
-      "Bowl",
-      "Dryden",
-      "Wells"
+      "Vase",
+      "Funeral",
+      "FuneralVase"
     ],
-    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DrydenWellsBowl/thumbnail.jpg",
-    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DrydenWellsBowl/",
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/FuneralVase/thumbnail.png",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/FuneralVase/",
     "document": "scene.svx.json",
-    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DrydenWellsBowl/Wells_Dryden_bowl.obj"
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/FuneralVase/Funeral Vase.obj"
   },
   {
-    "id": "Funeral Vase - Ming Dynasty",
-    "title": "Funeral Vase - Ming Dynasty",
-    "description": "Stoneware, date unknown",
+    "id": "AlveshereChrisMug",
+    "title": "AlveshereChrisMug",
+    "description": "Handcrafted ceramic mug with artistic glazing",
     "tags": [
-      "stoneware",
-      "ming"
-    ],
-    "thumb": "https://1ceramicsga.sfo3.cdn.digitaloceanspaces.com/FuneralVase/thumbnail.png",
-    "root": "https://1ceramicsga.sfo3.cdn.digitaloceanspaces.com/FuneralVase/",
-    "document": "scene.svx.json",
-    "download": "https://1ceramicsga.sfo3.cdn.digitaloceanspaces.com/FuneralVase/Funeral%20Vase.obj"
-  },
-  {
-    "id": "Alveshere_Chris_Mug",
-    "title": "Alveshere_Chris_Mug",
-    "description": "^9 mug with matte exterior and gloss liner glaze",
-    "tags": [
-      "^9",
-      "Matte",
-      "Gloss"
+      "Mug",
+      "AlveshereChrisMug"
     ],
     "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AlveshereChrisMug/thumbnail.jpg",
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AlveshereChrisMug/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AlveshereChrisMug/Chris Alveshere Mug.obj"
+  },
+  {
+    "id": "DrydenWellsBowl",
+    "title": "DrydenWellsBowl",
+    "description": "Ceramic bowl with unique glazing and firing techniques",
+    "tags": [
+      "Bowl",
+      "DrydenWellsBowl"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DrydenWellsBowl/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DrydenWellsBowl/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DrydenWellsBowl/Wells_Dryden_bowl.obj"
   }
 ]
