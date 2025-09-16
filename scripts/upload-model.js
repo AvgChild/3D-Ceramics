@@ -244,9 +244,7 @@ class ModelUploader {
         description: details.description,
         tags: details.tags,
         thumb: `${cdnBaseUrl}/${folderPath}thumbnail.jpg`,
-        root: files.glbFile ? 
-          `${cdnBaseUrl}/${folderPath}${path.basename(files.glbFile)}` : 
-          `${cdnBaseUrl}/${folderPath}`,
+        root: `${cdnBaseUrl}/${folderPath}`,
         document: "scene.svx.json",
         download: files.objFile ? `${cdnBaseUrl}/${folderPath}${path.basename(files.objFile)}` : undefined
       };
