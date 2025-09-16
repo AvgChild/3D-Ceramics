@@ -239,7 +239,7 @@ class ModelUploader {
 
       // Create catalog entry
       const catalogEntry = {
-        id: details.title,
+        id: details.folderName,
         title: details.title,
         description: details.description,
         tags: details.tags,

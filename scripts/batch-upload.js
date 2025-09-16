@@ -95,7 +95,7 @@ class BatchUploader extends ModelUploader {
       
       // Create catalog entry
       const catalogEntry = {
-        id: title,
+        id: folder.name,
         title: title,
         description: description,
         tags: tags,

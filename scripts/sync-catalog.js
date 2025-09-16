@@ -116,7 +116,7 @@ class CatalogSyncer {
     const download = folder.objFile ? `${this.cdnBaseUrl}/${folder.objFile}` : undefined;
 
     const entry = {
-      id: title,
+      id: folder.name,
       title: title,
       description: description,
       tags: tags,
@@ -218,11 +218,11 @@ class CatalogSyncer {
       // Create catalog entry
       const newEntry = this.createCatalogEntry(folderContents);
 
-      // Check if entry already exists
+      // Check if entry already exists (match by folder name in root URL)
       const existingIndex = this.catalog.findIndex(item =>
+        item.root.includes(folderName + '/') ||
         item.id === newEntry.id ||
-        item.title === newEntry.title ||
-        item.root.includes(folderName)
+        item.title === newEntry.title
       );
 
       if (existingIndex >= 0) {
