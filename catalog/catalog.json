@@ -29,10 +29,9 @@
   {
     "id": "ChrisAlveshereMug",
     "title": "ChrisAlveshereMug",
-    "description": "Handcrafted ceramic mug with artistic glazing",
+    "description": "^9 mug with gloss liner glaze and matte exterior glaze",
     "tags": [
-      "Mug",
-      "ChrisAlveshereMug"
+      "Mug"
     ],
     "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ChrisAlveshereMug/thumbnail.jpg",
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ChrisAlveshereMug/",

@@ -6,7 +6,8 @@
       "Bash(git rm:*)",
       "Bash(git checkout:*)",
       "Bash(npm install:*)",
-      "Bash(npm run sync-catalog:*)"
+      "Bash(npm run sync-catalog:*)",
+      "WebFetch(domain:1ceramicsga.sfo3.digitaloceanspaces.com)"
     ],
     "deny": [],
     "ask": []
