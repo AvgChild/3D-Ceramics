@@ -10,7 +10,7 @@
       "Wells"
     ],
     "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DrydenWellsBowl/thumbnail.jpg",
-    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DrydenWellsBowl/DRYDEN THROUGH RHINO.glb",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DrydenWellsBowl/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DrydenWellsBowl/Wells_Dryden_bowl.obj"
   },
@@ -23,7 +23,7 @@
       "ming"
     ],
     "thumb": "https://1ceramicsga.sfo3.cdn.digitaloceanspaces.com/FuneralVase/thumbnail.png",
-    "root": "https://1ceramicsga.sfo3.cdn.digitaloceanspaces.com/FuneralVase/Funeral%20Vase.glb",
+    "root": "https://1ceramicsga.sfo3.cdn.digitaloceanspaces.com/FuneralVase/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.cdn.digitaloceanspaces.com/FuneralVase/Funeral%20Vase.obj"
   },
@@ -37,7 +37,7 @@
       "Gloss"
     ],
     "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AlveshereChrisMug/thumbnail.jpg",
-    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AlveshereChrisMug/Alveshere_Chris_GLB.glb",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AlveshereChrisMug/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AlveshereChrisMug/Chris Alveshere Mug.obj"
   }
