@@ -28,13 +28,14 @@
   },
   {
     "id": "ChrisAlveshereMug",
-    "title": "ChrisAlveshereMug",
-    "description": "^9 mug with gloss liner glaze and matte exterior glaze",
+    "title": "Chris Alveshere Mug",
+    "description": "^9 Mug with matte glaze on exterior and gloss liner glaze",
     "tags": [
-      "Mug"
+      "^9",
+      "mug"
     ],
     "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ChrisAlveshereMug/thumbnail.jpg",
-    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ChrisAlveshereMug/",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ChrisAlveshereMug/ChrisAlveshereGLB.glb",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ChrisAlveshereMug/ChrisAlveshereMug.obj"
   }
