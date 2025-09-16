@@ -1,0 +1,24 @@
+{
+  "name": "clay-archive-uploader",
+  "version": "1.0.0",
+  "description": "Automated uploader for Clay Archive 3D models",
+  "scripts": {
+    "upload": "node scripts/upload-model.js",
+    "upload:batch": "node scripts/batch-upload.js",
+    "validate-catalog": "node scripts/validate-catalog.js"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1490.0",
+    "mime-types": "^2.1.35",
+    "sharp": "^0.32.6",
+    "inquirer": "^8.2.6",
+    "glob": "^10.3.10",
+    "chalk": "^4.1.2"
+  },
+  "devDependencies": {
+    "dotenv": "^16.3.1"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
