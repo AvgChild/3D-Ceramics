@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clay Archive</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Clay Archive</h1>
+    <div class="controls">
+      <input id="search" type="search" placeholder="Search models…" aria-label="Search models" />
+      <select id="tagFilter" aria-label="Filter by tag">
+        <option value="">All tags</option>
+      </select>
+    </div>
+  </header>
+
+  <main>
+    <div id="grid" class="grid" aria-live="polite"></div>
+    <div id="empty" class="empty" hidden>No results</div>
+  </main>
+
+  <!-- Educational Disclaimer Modal -->
+  <div id="disclaimerModal" class="modal">
+    <div class="modal-content">
+      <h2>Educational Purpose Disclaimer</h2>
+      <p>This website is for educational purposes only. All rights belong to the artist. If you see your work on here and would like it removed, please email Matt at <a href="mailto:mhb8691@gmail.com">mhb8691@gmail.com</a></p>
+      <button id="closeDisclaimer" class="close-btn">I Understand</button>
+    </div>
+  </div>
+
+  <template id="card-tpl">
+    <a class="card" href="#">
+      <img loading="lazy" alt="" />
+      <div class="meta">
+        <h3 class="title"></h3>
+        <p class="tags"></p>
+      </div>
+    </a>
+  </template>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
