@@ -2,7 +2,7 @@
   {
     "id": "FuneralVase",
     "title": "FuneralVase",
-    "description": "Elegant ceramic vase showcasing traditional craftsmanship",
+    "description": "Funeral vase c. 8thc - 18thc",
     "tags": [
       "Vase",
       "Funeral",
@@ -16,10 +16,10 @@
   {
     "id": "AlveshereChrisMug",
     "title": "AlveshereChrisMug",
-    "description": "Handcrafted ceramic mug with artistic glazing",
+    "description": "^9 fired mug. Matte exterior glaze with gloss liner glaze",
     "tags": [
       "Mug",
-      "AlveshereChrisMug"
+      "^9"
     ],
     "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AlveshereChrisMug/thumbnail.jpg",
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AlveshereChrisMug/",
@@ -29,10 +29,10 @@
   {
     "id": "DrydenWellsBowl",
     "title": "DrydenWellsBowl",
-    "description": "Ceramic bowl with unique glazing and firing techniques",
+    "description": "Soda fired bowl c. 2014",
     "tags": [
       "Bowl",
-      "DrydenWellsBowl"
+      "Soda Fired"
     ],
     "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DrydenWellsBowl/thumbnail.jpg",
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DrydenWellsBowl/",

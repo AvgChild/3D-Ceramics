@@ -180,8 +180,11 @@ class CatalogSyncer {
     return tags.length > 0 ? tags : ['Ceramic'];
   }
 
-  async syncCatalog() {
+  async syncCatalog(onlyNewEntries = false) {
     console.log(chalk.blue('\n🔄 Starting catalog sync...\n'));
+    if (onlyNewEntries) {
+      console.log(chalk.yellow('📋 Mode: Only adding new entries (preserving all existing entries)\n'));
+    }
 
     const folders = await this.listSpacesObjects();
     let newEntries = 0;
@@ -223,10 +226,25 @@ class CatalogSyncer {
       );
 
       if (existingIndex >= 0) {
-        // Update existing entry
-        this.catalog[existingIndex] = newEntry;
-        console.log(chalk.yellow(`   ✓ Updated existing entry: ${newEntry.title}`));
-        updatedEntries++;
+        if (onlyNewEntries) {
+          console.log(chalk.gray(`   ⏭  Skipping existing entry: ${newEntry.title}`));
+          skippedEntries++;
+        } else {
+          // Update existing entry but preserve custom fields
+          const existingEntry = this.catalog[existingIndex];
+
+          // Preserve existing description and tags if they exist and look custom
+          const preservedEntry = {
+            ...newEntry,
+            description: existingEntry.description || newEntry.description,
+            tags: existingEntry.tags && existingEntry.tags.length > 0 ? existingEntry.tags : newEntry.tags
+          };
+
+          // Only update URLs and basic metadata, preserve custom content
+          this.catalog[existingIndex] = preservedEntry;
+          console.log(chalk.yellow(`   ✓ Updated URLs for existing entry: ${newEntry.title} (preserved custom description)`));
+          updatedEntries++;
+        }
       } else {
         // Add new entry
         this.catalog.push(newEntry);
@@ -256,9 +274,12 @@ class CatalogSyncer {
 
 // Main execution
 async function main() {
+  const args = process.argv.slice(2);
+  const onlyNewEntries = args.includes('--new-only') || args.includes('-n');
+
   const syncer = new CatalogSyncer();
   await syncer.init();
-  await syncer.syncCatalog();
+  await syncer.syncCatalog(onlyNewEntries);
 }
 
 if (require.main === module) {
