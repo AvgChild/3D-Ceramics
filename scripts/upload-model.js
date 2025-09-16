@@ -220,7 +220,7 @@ class ModelUploader {
         urls.obj = await this.uploadFile(
           files.objFile,
           `${folderPath}${objName}`,
-          'application/octet-stream'
+          'model/obj'
         );
       }
 
