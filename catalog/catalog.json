@@ -14,19 +14,6 @@
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/FuneralVase/Funeral Vase.obj"
   },
   {
-    "id": "AlveshereChrisMug",
-    "title": "AlveshereChrisMug",
-    "description": "^9 fired mug. Matte exterior glaze with gloss liner glaze",
-    "tags": [
-      "Mug",
-      "^9"
-    ],
-    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AlveshereChrisMug/thumbnail.jpg",
-    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AlveshereChrisMug/",
-    "document": "scene.svx.json",
-    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AlveshereChrisMug/Chris Alveshere Mug.obj"
-  },
-  {
     "id": "DrydenWellsBowl",
     "title": "DrydenWellsBowl",
     "description": "Soda fired bowl c. 2014",
@@ -38,5 +25,20 @@
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DrydenWellsBowl/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DrydenWellsBowl/Wells_Dryden_bowl.obj"
+  },
+  {
+    "id": "Chris Alveshere Mug",
+    "title": "Chris Alveshere Mug",
+    "description": "^9 Mug with gloss liner glaze and matte exterior glaze. c.2023",
+    "tags": [
+      "Mug",
+      "Matte",
+      "Gloss",
+      "^9"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ChrisAlveshereMug/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ChrisAlveshereMug/Chris Alveshere GLB.glb",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ChrisAlveshereMug/Chris Alveshere Mug.obj"
   }
 ]
