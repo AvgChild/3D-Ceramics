@@ -2,15 +2,17 @@
   {
     "id": "Dryden Wells Bowl",
     "title": "Dryden Wells Bowl",
-    "description": "Soda Fired Bowl by Dryden Wells c.2014",
+    "description": "Soda Fired Ceramic Bowl c. 2014",
     "tags": [
-      "soda fired",
-      "bowl"
+      "Soda",
+      "Bowl",
+      "Dryden",
+      "Wells"
     ],
-    "thumb": "https://1ceramicsga.sfo3.cdn.digitaloceanspaces.com/my-scene/Thumbnail.jpg",
-    "root": "https://1ceramicsga.sfo3.cdn.digitaloceanspaces.com/my-scene/",
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DrydenWellsBowl/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DrydenWellsBowl/DRYDEN THROUGH RHINO.glb",
     "document": "scene.svx.json",
-    "download": "https://1ceramicsga.sfo3.cdn.digitaloceanspaces.com/my-scene/Wells_Dryden_bowl.obj"
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DrydenWellsBowl/Wells_Dryden_bowl.obj"
   },
   {
     "id": "Funeral Vase - Ming Dynasty",
