@@ -4,6 +4,7 @@
   "description": "Automated uploader for Clay Archive 3D models",
   "scripts": {
     "build": "rm -rf public && mkdir -p public && cp -r css js catalog *.html public/",
+    "start": "echo 'Static site - see public/ directory'",
     "upload": "node scripts/upload-model.js",
     "upload:batch": "node scripts/batch-upload.js",
     "validate-catalog": "node scripts/validate-catalog.js"
