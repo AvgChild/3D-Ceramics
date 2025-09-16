@@ -8,15 +8,13 @@
     "validate-catalog": "node scripts/validate-catalog.js"
   },
   "dependencies": {
-    "aws-sdk": "^2.1490.0",
+    "aws-sdk": "^2.1692.0",
+    "chalk": "^4.1.2",
+    "dotenv": "^16.6.1",
+    "glob": "^10.4.5",
+    "inquirer": "^8.2.7",
     "mime-types": "^2.1.35",
-    "sharp": "^0.32.6",
-    "inquirer": "^8.2.6",
-    "glob": "^10.3.10",
-    "chalk": "^4.1.2"
-  },
-  "devDependencies": {
-    "dotenv": "^16.3.1"
+    "sharp": "^0.32.6"
   },
   "engines": {
     "node": ">=16.0.0"

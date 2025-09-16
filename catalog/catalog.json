@@ -13,20 +13,6 @@
     "download": "https://1ceramicsga.sfo3.cdn.digitaloceanspaces.com/my-scene/Wells_Dryden_bowl.obj"
   },
   {
-    "id": "Chris Alveshere Mug",
-    "title": "Chris Alveshere Mug",
-    "description": "Matte exterior glazes with gloss liner glaze by Chris Alveshere c.2023",
-    "tags": [
-      "Matte Glaze",
-      "Gloss Glaze",
-      "Mug"
-    ],
-    "thumb": "https://1ceramicsga.sfo3.cdn.digitaloceanspaces.com/ChrisAlveshere/thumbnail.jpg",
-    "root": "https://1ceramicsga.sfo3.cdn.digitaloceanspaces.com/ChrisAlveshere/",
-    "document": "scene.svx.json",
-    "download": "https://1ceramicsga.sfo3.cdn.digitaloceanspaces.com/ChrisAlveshere/Chris%20Alveshere%20Mug.obj"
-  },
-  {
     "id": "Funeral Vase - Ming Dynasty",
     "title": "Funeral Vase - Ming Dynasty",
     "description": "Stoneware, date unknown",
@@ -38,5 +24,19 @@
     "root": "https://1ceramicsga.sfo3.cdn.digitaloceanspaces.com/FuneralVase/Funeral%20Vase.glb",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.cdn.digitaloceanspaces.com/FuneralVase/Funeral%20Vase.obj"
+  },
+  {
+    "id": "Alveshere_Chris_Mug",
+    "title": "Alveshere_Chris_Mug",
+    "description": "^9 mug with matte exterior and gloss liner glaze",
+    "tags": [
+      "^9",
+      "Matte",
+      "Gloss"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AlveshereChrisMug/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AlveshereChrisMug/Alveshere_Chris_GLB.glb",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AlveshereChrisMug/Chris Alveshere Mug.obj"
   }
 ]
