@@ -8,7 +8,12 @@
       "Bash(npm install:*)",
       "Bash(npm run sync-catalog:*)",
       "WebFetch(domain:1ceramicsga.sfo3.digitaloceanspaces.com)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(dir)",
+      "Bash(if exist public rmdir /s /q public)",
+      "Bash(rm:*)",
+      "Bash(mkdir:*)",
+      "Bash(cp:*)"
     ],
     "deny": [],
     "ask": []

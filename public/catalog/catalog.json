@@ -38,5 +38,21 @@
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ChrisAlveshereMug/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ChrisAlveshereMug/ChrisAlveshereMug.obj"
+  },
+  {
+    "id": "AdrienneEliadesCup",
+    "title": "Adrienne Eliades Cup",
+    "description": "^6 cup made with Laguna #16 Clay, Amaco underglaze, and a clear glaze. c.2016 Portland, Oregon",
+    "tags": [
+      "^6",
+      "cup",
+      "pinched",
+      "underglaze",
+      "white"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AdrienneEliadesCup/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AdrienneEliadesCup/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AdrienneEliadesCup/Adrienne Eliades.obj"
   }
 ]
