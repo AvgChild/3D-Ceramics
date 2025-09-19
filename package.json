@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Automated uploader for Clay Archive 3D models",
   "scripts": {
-    "build": "rm -rf public dist _static build && mkdir -p public dist _static build && cp -r css js catalog *.html public/ && cp -r public/* dist/ && cp -r public/* _static/ && cp -r public/* build/",
+    "build": "rimraf public dist _static build && mkdirp public dist _static build && cpy css/**/* public/css/ && cpy js/**/* public/js/ && cpy catalog/**/* public/catalog/ && cpy *.html public/ && cpy public/**/* dist/ && cpy public/**/* _static/ && cpy public/**/* build/",
     "start": "echo 'Static site - see public/ directory'",
     "upload": "node scripts/upload-model.js",
     "upload:batch": "node scripts/batch-upload.js",
@@ -22,5 +22,10 @@
   },
   "engines": {
     "node": ">=16.0.0"
+  },
+  "devDependencies": {
+    "cpy-cli": "^6.0.0",
+    "mkdirp": "^3.0.1",
+    "rimraf": "^6.0.1"
   }
 }
