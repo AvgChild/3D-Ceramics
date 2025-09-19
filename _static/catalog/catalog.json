@@ -1,0 +1,58 @@
+[
+  {
+    "id": "FuneralVase",
+    "title": "FuneralVase",
+    "description": "Funeral vase c. 8thc - 18thc",
+    "tags": [
+      "Vase",
+      "Funeral",
+      "FuneralVase"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/FuneralVase/thumbnail.png",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/FuneralVase/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/FuneralVase/Funeral Vase.obj"
+  },
+  {
+    "id": "DrydenWellsBowl",
+    "title": "DrydenWellsBowl",
+    "description": "Soda fired bowl c. 2014",
+    "tags": [
+      "Bowl",
+      "Soda Fired"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DrydenWellsBowl/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DrydenWellsBowl/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DrydenWellsBowl/Wells_Dryden_bowl.obj"
+  },
+  {
+    "id": "ChrisAlveshereMug",
+    "title": "Chris Alveshere Mug",
+    "description": "^9 Mug with matte glaze on exterior and gloss liner glaze",
+    "tags": [
+      "^9",
+      "mug"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ChrisAlveshereMug/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ChrisAlveshereMug/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ChrisAlveshereMug/ChrisAlveshereMug.obj"
+  },
+  {
+    "id": "AdrienneEliadesCup",
+    "title": "Adrienne Eliades Cup",
+    "description": "^6 cup made with Laguna #16 Clay, Amaco underglaze, and a clear glaze. c.2016 Portland, Oregon",
+    "tags": [
+      "^6",
+      "cup",
+      "pinched",
+      "underglaze",
+      "white"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AdrienneEliadesCup/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AdrienneEliadesCup/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AdrienneEliadesCup/Adrienne Eliades.obj"
+  }
+]

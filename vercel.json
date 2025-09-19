@@ -1,0 +1,6 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "public",
+  "devCommand": "echo 'Static site - see public/ directory'",
+  "installCommand": "npm install"
+}
