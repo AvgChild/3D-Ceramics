@@ -438,24 +438,47 @@ body {
   .viewer-layout{
     grid-template-columns: 1fr;
   }
-  
+
   .details-panel{
     display: none; /* Hide on mobile, or make it a toggle */
   }
-  
+
   .floating-controls {
     left: 10px;
     min-width: 160px;
     padding: 12px;
   }
-  
+
   .panel-title {
     font-size: 16px;
   }
-  
+
   .panel-btn, .back-btn {
     padding: 8px 10px;
     font-size: 13px;
+  }
+
+  /* Mobile header fixes */
+  .site-header {
+    padding: 1.5rem 0;
+    position: relative;
+    z-index: 1000;
+  }
+
+  .site-header h1 {
+    font-size: 2rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 1rem;
+  }
+
+  .controls input, .controls select {
+    min-width: 280px;
+    max-width: 90vw;
   }
 }
 
@@ -465,8 +488,25 @@ body {
     min-width: 140px;
     padding: 10px;
   }
-  
+
   .control-actions {
     gap: 6px;
+  }
+
+  /* Smaller mobile adjustments */
+  .site-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .controls input, .controls select {
+    min-width: 250px;
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    padding: 10px;
+    gap: 10px;
   }
 }
