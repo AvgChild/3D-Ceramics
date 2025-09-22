@@ -433,6 +433,48 @@ body {
   }
 }
 
+/* ===== ANDROID BROWSER FIXES ===== */
+/* Fix for Android Chrome viewport issues */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .site-header {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+/* Android-specific backdrop-filter fallback */
+@supports not (backdrop-filter: blur(10px)) {
+  .controls input, .controls select {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: none;
+  }
+}
+
+/* Fix Android touch/tap highlighting */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Allow text selection where needed */
+.site-header h1,
+.footer-content,
+.card .title,
+.card .tags,
+input,
+select {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 960px){
   .viewer-layout{
@@ -463,6 +505,11 @@ body {
     padding: 1.5rem 0;
     position: relative;
     z-index: 1000;
+    width: 100%;
+    min-height: auto;
+    display: block;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
 
   .site-header h1 {
