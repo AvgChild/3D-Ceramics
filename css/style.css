@@ -14,6 +14,16 @@ body{
   overflow-x: hidden;
 }
 
+/* Android fallback - ensure basic layout works */
+@media screen and (max-device-width: 767px) {
+  body {
+    display: block !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    overflow-x: hidden !important;
+    min-height: 100vh !important;
+  }
+}
+
 /* ===== FLOATING CONTROL PANEL (REPLACES OLD HEADER) ===== */
 .floating-controls {
   position: fixed;
@@ -441,6 +451,47 @@ body {
     backface-visibility: hidden;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
+    position: static !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    min-height: 120px !important;
+    width: 100% !important;
+  }
+}
+
+/* Force header visibility on all Android devices */
+@media screen and (max-device-width: 767px) {
+  .site-header {
+    position: static !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    background: #2c3e50 !important;
+    padding: 20px 0 !important;
+    text-align: center !important;
+    width: 100% !important;
+    min-height: 100px !important;
+    box-sizing: border-box !important;
+  }
+
+  .site-header h1 {
+    display: block !important;
+    visibility: visible !important;
+    color: #ecf0f1 !important;
+    font-size: 28px !important;
+    margin: 0 !important;
+    padding: 10px !important;
+    text-align: center !important;
+  }
+
+  .site-header .controls {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin-top: 15px !important;
   }
 }
 
