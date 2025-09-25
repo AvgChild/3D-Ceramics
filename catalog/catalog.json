@@ -68,5 +68,19 @@
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/RichardJamesSculpture/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/RichardJamesSculpture/Richard James Sculpture.obj"
+  },
+  {
+    "id": "SamJayneBowl",
+    "title": "Sam Jayne Bowl",
+    "description": "Pinched bowl with face. c.2018 Cincinnati, OH",
+    "tags": [
+      "White",
+      "Gloss",
+      "Bowl"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/SamJayneBowl/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/SamJayneBowl/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/SamJayneBowl/Sam Jayne Bowl.obj"
   }
 ]
