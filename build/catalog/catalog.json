@@ -54,5 +54,19 @@
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AdrienneEliadesCup/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AdrienneEliadesCup/Adrienne Eliades.obj"
+  },
+  {
+    "id": "RichardJamesSculpture",
+    "title": "Richard James Sculpture",
+    "description": "Black Clay Sculpture depicting a figure. Made in the artist's time in graduate school at University of Kansas. c. 2014 Lawrence, KS",
+    "tags": [
+      "Sculpture",
+      "Black",
+      "Unglazed"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/RichardJamesSculpture/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/RichardJamesSculpture/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/RichardJamesSculpture/Richard James Sculpture.obj"
   }
 ]
