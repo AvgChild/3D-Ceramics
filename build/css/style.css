@@ -229,6 +229,16 @@ body{
   z-index: 1;
 }
 
+.site-header h1 a {
+  color: #5dade2;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.site-header h1 a:hover {
+  color: #85c4e8;
+}
+
 .site-header .controls {
   margin-top: 1.5rem;
   position: relative;
