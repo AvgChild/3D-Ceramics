@@ -41,7 +41,7 @@
       border-radius: 16px;
       padding: 16px;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-      min-width: 200px;
+      width: 280px;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       transform-origin: left center;
     }
@@ -160,11 +160,35 @@
       transform: translateY(-1px);
     }
 
+    /* Overview section styling in floating controls */
+    .overview-section {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
+      padding: 12px;
+      margin: 8px 0;
+    }
+
+    .overview-section h3 {
+      margin: 0 0 8px 0;
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .overview-section p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.4;
+      color: #555;
+      max-height: 120px;
+      overflow-y: auto;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
     /* ===== MAIN LAYOUT ===== */
     .viewer-layout{
-      display: grid;
-      grid-template-columns: 1fr 360px;
-      gap: 0;
+      display: block;
       height: 100vh;
       padding: 0;
     }
@@ -263,13 +287,6 @@
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 960px){
-      .viewer-layout{
-        grid-template-columns: 1fr;
-      }
-      
-      .details-panel{
-        display: none;
-      }
       
       .floating-controls {
         left: 10px;
@@ -318,10 +335,16 @@
       <div class="control-item">
         <h2 id="itemTitle" class="panel-title">Viewer</h2>
       </div>
-      
+
+      <div class="control-item">
+        <div class="overview-section">
+          <h3>Overview</h3>
+          <p id="itemDesc">Loading…</p>
+        </div>
+      </div>
+
       <div class="control-actions">
         <a id="downloadBtn" class="panel-btn" href="#" download>📥 Download model</a>
-        <a id="openJson" class="panel-btn" href="#" target="_blank" rel="noopener">📄 Open JSON</a>
       </div>
     </div>
     
@@ -336,26 +359,6 @@
       <voyager-explorer id="viewer"></voyager-explorer>
     </section>
 
-    <!-- Details panel -->
-    <aside class="details-panel" aria-label="Object details">
-      <div class="details-panel__header">
-        <h2>Details</h2>
-      </div>
-
-      <details open class="dp-section">
-        <summary>Overview</summary>
-        <p id="itemDesc" class="dp-body">Loading…</p>
-      </details>
-
-      <details class="dp-section">
-        <summary>Metadata</summary>
-        <dl class="kv dp-body">
-          <div><dt>Published name</dt><dd id="metaName">—</dd></div>
-          <div><dt>Record ID</dt><dd id="metaId">—</dd></div>
-          <div><dt>License</dt><dd>Belongs to Artist</dd></div>
-        </dl>
-      </details>
-    </aside>
   </main>
 
   <!-- Voyager JS -->
@@ -371,9 +374,6 @@
 
     document.getElementById('itemTitle').textContent = item.title || 'Viewer';
     document.getElementById('itemDesc').textContent  = item.description || '';
-    document.getElementById('metaName').textContent  = item.metaName || item.title || '—';
-    document.getElementById('metaId').textContent    = item.id || '—';
-    document.getElementById('openJson').href = item.root + item.document;
 
     const dlEl = document.getElementById('downloadBtn');
     if (item.download) {
