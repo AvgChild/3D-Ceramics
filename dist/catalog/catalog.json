@@ -82,5 +82,20 @@
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/SamJayneBowl/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/SamJayneBowl/Sam Jayne Bowl.obj"
+  },
+  {
+    "id": "DeanRoperAshtray",
+    "title": "Dean Roper Ashtray",
+    "description": "Lowfire ash tray with gold luster rim and decals",
+    "tags": [
+      "Luster",
+      "Decal",
+      "Ashtray",
+      "White"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DeanRoperAshtray/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DeanRoperAshtray/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DeanRoperAshtray/Dean Ashtray.obj"
   }
 ]
