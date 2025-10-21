@@ -110,5 +110,18 @@
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/MarkoFieldsVessel/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/MarkoFieldsVessel/MarkoFieldsOBJ.obj"
+  },
+  {
+    "id": "PeterShireMug",
+    "title": "Peter Shire Mug",
+    "description": "Splatter Mug by way of Echo Park Pottery c.2020. Slab built",
+    "tags": [
+      "Slab",
+      "White"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/PeterShireMug/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/PeterShireMug/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/PeterShireMug/Peter Shire Mug OBJ.obj"
   }
 ]
