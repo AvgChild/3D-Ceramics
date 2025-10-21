@@ -97,5 +97,18 @@
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DeanRoperAshtray/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DeanRoperAshtray/Dean Ashtray.obj"
+  },
+  {
+    "id": "MarkoFieldsVessel",
+    "title": "Marko Fields Vessel",
+    "description": "Large spouted vessel. Built as a BFA at University of Kansas in 1996. Currently on view in University of Kansas Teaching Gallery. ",
+    "tags": [
+      "Vessel",
+      "University of Kansas"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/MarkoFieldsVessel/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/MarkoFieldsVessel/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/MarkoFieldsVessel/MarkoFieldsOBJ.obj"
   }
 ]
