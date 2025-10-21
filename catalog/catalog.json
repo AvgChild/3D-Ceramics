@@ -148,5 +148,31 @@
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/KyleJohnsForm/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/KyleJohnsForm/Kyle Johns OBJ.obj"
+  },
+  {
+    "id": "WarrenMacKenzieFacetedBowl",
+    "title": "Warren MacKenzie Faceted Bowl",
+    "description": "Faceted Bowl by Warren MacKenzie",
+    "tags": [
+      "Faceted",
+      "Bowl"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/WarrenMacKenzieFacetedBowl/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/WarrenMacKenzieFacetedBowl/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/WarrenMacKenzieFacetedBowl/Warren MacKenzie Bowl.obj"
+  },
+  {
+    "id": "WarrenMacKenzieTeaBowl",
+    "title": "Warren MacKenzie Tea Bowl",
+    "description": "Tea Bowl by Warren MacKenzie",
+    "tags": [
+      "teabowl",
+      "shino"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/WarrenMacKenzieTeaBowl/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/WarrenMacKenzieTeaBowl/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/WarrenMacKenzieTeaBowl/Warren MacKenzie Tea Bowl.obj"
   }
 ]
