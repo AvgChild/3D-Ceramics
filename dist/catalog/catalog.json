@@ -123,5 +123,18 @@
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/PeterShireMug/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/PeterShireMug/Peter Shire Mug OBJ.obj"
+  },
+  {
+    "id": "VittorioAcabboVessel",
+    "title": "Vittorio Acabbo Vessel",
+    "description": "Blue Vessel by Vittorio Acabbo c. 1981",
+    "tags": [
+      "Blue",
+      "Vessel"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/VittorioAcabboVessel/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/VittorioAcabboVessel/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/VittorioAcabboVessel/OBJ.obj"
   }
 ]
