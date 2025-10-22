@@ -15,11 +15,11 @@ class PhysicsCard {
     this.element = element;
     this.item = item;
     this.x = Math.random() * (window.innerWidth - 250);
-    this.y = -300 - (index * 50); // Start above viewport, staggered
-    this.vx = (Math.random() - 0.5) * 5; // horizontal velocity
-    this.vy = 0; // vertical velocity
+    this.y = -50 - (index * 15); // Start just above viewport, closer spacing
+    this.vx = (Math.random() - 0.5) * 3; // horizontal velocity
+    this.vy = Math.random() * 2 + 3; // Start with initial downward velocity
     this.rotation = Math.random() * 360;
-    this.rotationSpeed = (Math.random() - 0.5) * 5;
+    this.rotationSpeed = (Math.random() - 0.5) * 3;
     this.width = 220;
     this.height = 280;
     this.isDragging = false;
@@ -69,8 +69,8 @@ class PhysicsCard {
     this.isDragging = true;
     draggedCard = this;
     this.element.style.cursor = 'grabbing';
-    this.offsetX = x - this.x;
-    this.offsetY = y - this.y;
+    this.dragOffsetX = x - this.x;
+    this.dragOffsetY = y - this.y;
     this.vy = 0;
     this.vx = 0;
 
@@ -80,27 +80,28 @@ class PhysicsCard {
   }
 
   drag(x, y) {
-    if (this.isDragging) {
-      this.x = x - this.offsetX;
-      this.y = y - this.offsetY;
-      this.updateTransform();
-    }
+    // Dragging is handled in the animation loop for smooth updates
   }
 
   stopDrag() {
     if (this.isDragging) {
       this.isDragging = false;
       this.element.style.cursor = 'grab';
-      // Add slight velocity when released
-      this.vy = 2;
+      this.vy = 2; // Small drop velocity
     }
   }
 
   update() {
-    if (this.isDragging) return;
+    // Handle dragging
+    if (this.isDragging) {
+      this.x = mouseX - this.dragOffsetX;
+      this.y = mouseY - this.dragOffsetY;
+      this.updateTransform();
+      return;
+    }
 
-    const gravity = 0.5;
-    const friction = 0.98;
+    const gravity = 0.35;
+    const friction = 0.97;
     const groundY = window.innerHeight - this.height - 20;
 
     // Apply gravity
@@ -121,14 +122,13 @@ class PhysicsCard {
     // Collision with ground
     if (this.y >= groundY) {
       this.y = groundY;
-      this.vy *= -0.4; // Bounce
-      this.rotationSpeed *= 0.8;
+      this.vy *= -0.3;
+      this.rotationSpeed *= 0.7;
 
-      if (Math.abs(this.vy) < 0.5) {
+      if (Math.abs(this.vy) < 1) {
         this.vy = 0;
         this.isSettled = true;
         this.rotationSpeed = 0;
-        // Settle to nearest slight angle
         this.rotation = Math.round(this.rotation / 15) * 15;
       }
     }
@@ -258,19 +258,13 @@ document.addEventListener('mousemove', (e) => {
   if (currentMode !== 'pile') return;
   mouseX = e.clientX;
   mouseY = e.clientY;
-  if (draggedCard) {
-    draggedCard.drag(mouseX, mouseY);
-  }
 });
 
 document.addEventListener('touchmove', (e) => {
   if (currentMode !== 'pile') return;
-  if (draggedCard) {
-    const touch = e.touches[0];
-    mouseX = touch.clientX;
-    mouseY = touch.clientY;
-    draggedCard.drag(mouseX, mouseY);
-  }
+  const touch = e.touches[0];
+  mouseX = touch.clientX;
+  mouseY = touch.clientY;
 });
 
 document.addEventListener('mouseup', () => {
