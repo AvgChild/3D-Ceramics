@@ -174,5 +174,17 @@
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/WarrenMacKenzieTeaBowl/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/WarrenMacKenzieTeaBowl/Warren MacKenzie Tea Bowl.obj"
+  },
+  {
+    "id": "DannyMeisingerTeabowl",
+    "title": "Danny Meisinger Teabowl",
+    "description": "Danny Meisinger Teabowl c. 2015",
+    "tags": [
+      "Teabowl"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DannyMeisingerTeabowl/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DannyMeisingerTeabowl/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DannyMeisingerTeabowl/4096 test.obj"
   }
 ]
