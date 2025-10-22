@@ -186,5 +186,19 @@
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DannyMeisingerTeabowl/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DannyMeisingerTeabowl/4096 test.obj"
+  },
+  {
+    "id": "DebbieKupinskyRabbitCup",
+    "title": "Debbie Kupinsky Rabbit Cup",
+    "description": "Debbie Kupinsky Rabbit Cup c. 2017 ^6 Porcelain",
+    "tags": [
+      "porcelain",
+      "^6",
+      "white"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DebbieKupinskyRabbitCup/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DebbieKupinskyRabbitCup/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DebbieKupinskyRabbitCup/Debbie Kupinsky.obj"
   }
 ]
