@@ -227,5 +227,17 @@
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ChandraDebuseMug/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ChandraDebuseMug/Chandra Debuse.obj"
+  },
+  {
+    "id": "GillianParkeCup",
+    "title": "Gillian Parke Cup",
+    "description": "Cup by Gillian Parke c. 2017",
+    "tags": [
+      "cup"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/GillianParkCup/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/GillianParkCup/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/GillianParkCup/Gillian Parke Cup.obj"
   }
 ]
