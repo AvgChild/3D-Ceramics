@@ -6,12 +6,20 @@ const cardTpl = document.getElementById('card-tpl');
 let items = [];
 let tags = new Set();
 
-// Physics engine setup
-const { Engine, Render, Runner, Bodies, Composite, Mouse, MouseConstraint, Events, Body } = Matter;
-let engine, matterRender, runner, mouseConstraint;
+// Custom Physics Engine
 let physicsCards = [];
-let clickTimeout = null;
 let isDragging = false;
+let draggedCard = null;
+let mouseX = 0;
+let mouseY = 0;
+let mouseDownTime = 0;
+let animationId = null;
+
+// Physics constants
+const GRAVITY = 0.5;
+const FRICTION = 0.98;
+const BOUNCE = 0.6;
+const DRAG_DAMPING = 0.95;
 
 async function loadCatalog() {
   const res = await fetch('catalog/catalog.json', { cache: 'no-store' });
@@ -47,124 +55,120 @@ function shuffleArray(array) {
   return shuffled;
 }
 
-function initPhysics() {
-  // Clean up existing engine if any
-  if (engine) {
-    Render.stop(matterRender);
-    Runner.stop(runner);
-    Engine.clear(engine);
-    matterRender.canvas.remove();
-    matterRender.canvas = null;
-    matterRender.context = null;
-    matterRender.textures = {};
-  }
-
-  // Create engine
-  engine = Engine.create({
-    gravity: { x: 0, y: 1 }
-  });
-
-  // Create renderer
+// Get boundaries for collision detection
+function getBoundaries() {
   const gridRect = grid.getBoundingClientRect();
   const canvasHeight = window.innerHeight - gridRect.top;
 
-  matterRender = Render.create({
-    element: grid,
-    engine: engine,
-    options: {
-      width: window.innerWidth,
-      height: canvasHeight,
-      wireframes: false,
-      background: 'transparent'
-    }
-  });
+  return {
+    left: 0,
+    right: window.innerWidth,
+    top: 0,
+    bottom: canvasHeight - 50 // Ground offset
+  };
+}
 
-  // Create ground and walls
-  const canvasHeight = window.innerHeight - grid.getBoundingClientRect().top;
+// Check if point is inside card
+function isPointInCard(x, y, card) {
+  const hw = card.width / 2;
+  const hh = card.height / 2;
 
-  const ground = Bodies.rectangle(
-    window.innerWidth / 2,
-    canvasHeight - 25,
-    window.innerWidth,
-    50,
-    { isStatic: true, render: { fillStyle: 'transparent' } }
-  );
+  // Transform mouse coordinates relative to card center and rotation
+  const dx = x - card.x;
+  const dy = y - card.y;
 
-  const leftWall = Bodies.rectangle(
-    -25,
-    canvasHeight / 2,
-    50,
-    canvasHeight,
-    { isStatic: true, render: { fillStyle: 'transparent' } }
-  );
+  // Rotate point to card's local space
+  const cos = Math.cos(-card.rotation);
+  const sin = Math.sin(-card.rotation);
+  const localX = dx * cos - dy * sin;
+  const localY = dx * sin + dy * cos;
 
-  const rightWall = Bodies.rectangle(
-    window.innerWidth + 25,
-    canvasHeight / 2,
-    50,
-    canvasHeight,
-    { isStatic: true, render: { fillStyle: 'transparent' } }
-  );
+  return Math.abs(localX) <= hw && Math.abs(localY) <= hh;
+}
 
-  Composite.add(engine.world, [ground, leftWall, rightWall]);
+// Initialize mouse event handlers
+function initPhysics() {
+  let lastMouseX = 0;
+  let lastMouseY = 0;
+  let mouseMoved = false;
 
-  // Create mouse control
-  const mouse = Mouse.create(matterRender.canvas);
-  mouseConstraint = MouseConstraint.create(engine, {
-    mouse: mouse,
-    constraint: {
-      stiffness: 0.2,
-      render: { visible: false }
-    }
-  });
+  // Mouse move tracking
+  const handleMouseMove = (e) => {
+    const currentX = e.clientX;
+    const currentY = e.clientY;
 
-  Composite.add(engine.world, mouseConstraint);
-
-  // Track dragging
-  Events.on(mouseConstraint, 'startdrag', () => {
-    isDragging = true;
-  });
-
-  Events.on(mouseConstraint, 'enddrag', () => {
-    setTimeout(() => {
-      isDragging = false;
-    }, 100);
-  });
-
-  // Handle clicks for navigation
-  Events.on(mouseConstraint, 'mousedown', (event) => {
-    const mousePosition = event.mouse.position;
-
-    clickTimeout = setTimeout(() => {
-      if (!isDragging) {
-        // Find clicked card
-        const bodies = Composite.allBodies(engine.world);
-        for (let body of bodies) {
-          if (body.isStatic) continue;
-
-          if (Matter.Bounds.contains(body.bounds, mousePosition)) {
-            const card = physicsCards.find(c => c.body === body);
-            if (card && card.href) {
-              window.location.href = card.href;
-            }
-            break;
-          }
-        }
+    if (draggedCard) {
+      // Track if mouse actually moved significantly
+      if (Math.abs(currentX - lastMouseX) > 3 || Math.abs(currentY - lastMouseY) > 3) {
+        mouseMoved = true;
+        isDragging = true;
       }
-    }, 200);
-  });
 
-  Events.on(mouseConstraint, 'mouseup', () => {
-    if (clickTimeout) {
-      clearTimeout(clickTimeout);
-      clickTimeout = null;
+      // Update position if dragging
+      if (isDragging) {
+        draggedCard.x = currentX;
+        draggedCard.y = currentY;
+        draggedCard.velocityX = currentX - lastMouseX;
+        draggedCard.velocityY = currentY - lastMouseY;
+      }
     }
-  });
 
-  // Start the engine
-  Render.run(matterRender);
-  runner = Runner.create();
-  Runner.run(runner, engine);
+    lastMouseX = currentX;
+    lastMouseY = currentY;
+  };
+
+  // Mouse down - start drag
+  const handleMouseDown = (e) => {
+    mouseDownTime = Date.now();
+    mouseMoved = false;
+    lastMouseX = e.clientX;
+    lastMouseY = e.clientY;
+
+    // Find card under mouse (check from top to bottom)
+    for (let i = physicsCards.length - 1; i >= 0; i--) {
+      const card = physicsCards[i];
+      if (isPointInCard(e.clientX, e.clientY, card)) {
+        e.preventDefault(); // Prevent default link behavior
+        draggedCard = card;
+        card.isDragged = true;
+
+        // Store offset from card center
+        card.dragOffsetX = e.clientX - card.x;
+        card.dragOffsetY = e.clientY - card.y;
+
+        // Bring to front
+        physicsCards.splice(i, 1);
+        physicsCards.push(card);
+
+        break;
+      }
+    }
+  };
+
+  // Mouse up - release or navigate
+  const handleMouseUp = (e) => {
+    if (draggedCard) {
+      // Only navigate if no significant movement occurred
+      if (!mouseMoved) {
+        window.location.href = draggedCard.href;
+      } else if (isDragging) {
+        // Apply throw velocity only if card was actually dragged
+        const throwPower = 0.5;
+        draggedCard.velocityX *= throwPower;
+        draggedCard.velocityY *= throwPower;
+      }
+
+      draggedCard.isDragged = false;
+    }
+
+    isDragging = false;
+    draggedCard = null;
+    mouseMoved = false;
+  };
+
+  document.addEventListener('mousemove', handleMouseMove);
+  document.addEventListener('mousedown', handleMouseDown);
+  document.addEventListener('mouseup', handleMouseUp);
 }
 
 function createPhysicsCard(item, index, total) {
@@ -186,17 +190,6 @@ function createPhysicsCard(item, index, total) {
   // Random rotation for tumbling effect
   const rotation = (Math.random() - 0.5) * Math.PI / 3;
 
-  // Create physics body
-  const body = Bodies.rectangle(x, y, cardWidth, cardHeight, {
-    restitution: 0.3,
-    friction: 0.5,
-    density: 0.001,
-    angle: rotation,
-    render: {
-      fillStyle: 'transparent'
-    }
-  });
-
   // Create DOM element
   const cardElement = cardTpl.content.firstElementChild.cloneNode(true);
   cardElement.href = `viewer.html?id=${encodeURIComponent(item.id)}`;
@@ -209,41 +202,128 @@ function createPhysicsCard(item, index, total) {
   // Style for physics mode
   cardElement.style.position = 'absolute';
   cardElement.style.width = cardWidth + 'px';
-  cardElement.style.pointerEvents = 'none'; // Let Matter.js handle mouse events
+  cardElement.style.pointerEvents = 'auto';
   cardElement.style.transformOrigin = 'center center';
+  cardElement.style.cursor = 'grab';
 
   grid.appendChild(cardElement);
 
-  Composite.add(engine.world, body);
-
+  // Create physics object
   return {
-    body: body,
     element: cardElement,
-    href: `viewer.html?id=${encodeURIComponent(item.id)}`
+    href: `viewer.html?id=${encodeURIComponent(item.id)}`,
+    x: x,
+    y: y,
+    width: cardWidth,
+    height: cardHeight,
+    velocityX: 0,
+    velocityY: 0,
+    rotation: rotation,
+    angularVelocity: (Math.random() - 0.5) * 0.1,
+    isDragged: false
   };
 }
 
+// Main physics update loop
 function updatePhysicsCards() {
-  physicsCards.forEach(card => {
-    const { x, y } = card.body.position;
-    const angle = card.body.angle;
+  const boundaries = getBoundaries();
 
-    card.element.style.transform = `translate(${x - 110}px, ${y - 120}px) rotate(${angle}rad)`;
+  physicsCards.forEach(card => {
+    // Skip if being dragged
+    if (card.isDragged) {
+      card.element.style.transform = `translate(${card.x - card.width / 2}px, ${card.y - card.height / 2}px) rotate(${card.rotation}rad)`;
+      card.element.style.cursor = 'grabbing';
+      return;
+    } else {
+      card.element.style.cursor = 'grab';
+    }
+
+    const hw = card.width / 2;
+    const hh = card.height / 2;
+    const onGround = card.y + hh >= boundaries.bottom - 5;
+
+    // Check if card is at rest
+    if (onGround && Math.abs(card.velocityX) < 0.5 && Math.abs(card.velocityY) < 0.5) {
+      card.velocityX = 0;
+      card.velocityY = 0;
+      card.angularVelocity *= 0.9;
+
+      if (Math.abs(card.angularVelocity) < 0.001) {
+        card.angularVelocity = 0;
+      }
+    }
+
+    // Only apply physics if not at complete rest
+    if (card.velocityX !== 0 || card.velocityY !== 0 || card.angularVelocity !== 0) {
+      // Apply gravity only if not on ground
+      if (!onGround) {
+        card.velocityY += GRAVITY;
+      }
+
+      // Apply velocity
+      card.x += card.velocityX;
+      card.y += card.velocityY;
+
+      // Apply rotation
+      card.rotation += card.angularVelocity;
+
+      // Apply friction
+      card.velocityX *= FRICTION;
+      card.velocityY *= FRICTION;
+      card.angularVelocity *= 0.95;
+
+      // Ground collision
+      if (card.y + hh > boundaries.bottom) {
+        card.y = boundaries.bottom - hh;
+
+        // Only bounce if coming down with significant velocity
+        if (card.velocityY > 2) {
+          card.velocityY *= -BOUNCE;
+        } else {
+          card.velocityY = 0;
+        }
+
+        card.velocityX *= 0.8; // Ground friction
+        card.angularVelocity *= 0.8;
+      }
+
+      // Left wall collision
+      if (card.x - hw < boundaries.left) {
+        card.x = boundaries.left + hw;
+        card.velocityX *= -BOUNCE;
+      }
+
+      // Right wall collision
+      if (card.x + hw > boundaries.right) {
+        card.x = boundaries.right - hw;
+        card.velocityX *= -BOUNCE;
+      }
+
+      // Top boundary
+      if (card.y - hh < boundaries.top) {
+        card.y = boundaries.top + hh;
+        card.velocityY = Math.abs(card.velocityY) * 0.5;
+      }
+    }
+
+    // Update DOM transform
+    card.element.style.transform = `translate(${card.x - card.width / 2}px, ${card.y - card.height / 2}px) rotate(${card.rotation}rad)`;
   });
 
-  requestAnimationFrame(updatePhysicsCards);
+  // Continue animation loop
+  animationId = requestAnimationFrame(updatePhysicsCards);
 }
 
 function render(shouldShuffle = false) {
   // Clear existing
   grid.innerHTML = '';
 
-  // Remove old physics bodies
-  if (engine) {
-    physicsCards.forEach(card => {
-      Composite.remove(engine.world, card.body);
-    });
+  // Stop animation loop if running
+  if (animationId) {
+    cancelAnimationFrame(animationId);
+    animationId = null;
   }
+
   physicsCards = [];
 
   let filtered = items.filter(passesFilters);
@@ -254,11 +334,6 @@ function render(shouldShuffle = false) {
   empty.hidden = filtered.length > 0;
 
   if (filtered.length > 0) {
-    // Initialize physics if not already done
-    if (!engine) {
-      initPhysics();
-    }
-
     // Create physics cards
     filtered.forEach((item, index) => {
       const card = createPhysicsCard(item, index, filtered.length);
@@ -270,6 +345,13 @@ function render(shouldShuffle = false) {
   }
 }
 
+// Initialize physics once on load
+let physicsInitialized = false;
+if (!physicsInitialized) {
+  initPhysics();
+  physicsInitialized = true;
+}
+
 function shuffleGrid() {
   render(true);
 }
@@ -278,47 +360,9 @@ search.addEventListener('input', () => render(false));
 tagFilter.addEventListener('change', () => render(false));
 document.getElementById('shuffleBtn').addEventListener('click', shuffleGrid);
 
-// Handle window resize
+// Handle window resize - boundaries update automatically via getBoundaries()
 window.addEventListener('resize', () => {
-  if (matterRender && matterRender.canvas) {
-    const canvasHeight = window.innerHeight - grid.getBoundingClientRect().top;
-    matterRender.canvas.width = window.innerWidth;
-    matterRender.canvas.height = canvasHeight;
-
-    // Update boundaries
-    const bodies = Composite.allBodies(engine.world);
-    bodies.forEach(body => {
-      if (body.isStatic) {
-        Composite.remove(engine.world, body);
-      }
-    });
-
-    const ground = Bodies.rectangle(
-      window.innerWidth / 2,
-      canvasHeight - 25,
-      window.innerWidth,
-      50,
-      { isStatic: true, render: { fillStyle: 'transparent' } }
-    );
-
-    const leftWall = Bodies.rectangle(
-      -25,
-      canvasHeight / 2,
-      50,
-      canvasHeight,
-      { isStatic: true, render: { fillStyle: 'transparent' } }
-    );
-
-    const rightWall = Bodies.rectangle(
-      window.innerWidth + 25,
-      canvasHeight / 2,
-      50,
-      canvasHeight,
-      { isStatic: true, render: { fillStyle: 'transparent' } }
-    );
-
-    Composite.add(engine.world, [ground, leftWall, rightWall]);
-  }
+  // Boundaries will be recalculated in the next animation frame
 });
 
 // Educational disclaimer modal
