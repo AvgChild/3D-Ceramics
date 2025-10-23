@@ -239,5 +239,17 @@
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/GillianParkCup/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/GillianParkCup/Gillian Parke Cup.obj"
+  },
+  {
+    "id": "PoseyBacopoulosEwer",
+    "title": "Posey Bacopoulos Ewer",
+    "description": "Ewer by Posey Bacopoulos c. 2005",
+    "tags": [
+      "Ewer"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/PoseyBacopoulosEwer/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/PoseyBacopoulosEwer/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/PoseyBacopoulosEwer/Posey Bacopoulos.obj"
   }
 ]
