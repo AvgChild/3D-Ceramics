@@ -57,14 +57,17 @@ function shuffleArray(array) {
 
 // Get boundaries for collision detection
 function getBoundaries() {
-  const gridRect = grid.getBoundingClientRect();
-  const canvasHeight = window.innerHeight - gridRect.top;
+  const footer = document.querySelector('.site-footer');
+  const footerRect = footer ? footer.getBoundingClientRect() : null;
+
+  // Ground should be at the top of the footer
+  const groundY = footerRect ? footerRect.top : window.innerHeight;
 
   return {
     left: 0,
     right: window.innerWidth,
     top: 0,
-    bottom: canvasHeight - 50 // Ground offset
+    bottom: groundY
   };
 }
 
@@ -88,9 +91,12 @@ function isPointInCard(x, y, card) {
 
 // Initialize mouse event handlers
 function initPhysics() {
+  let startMouseX = 0;
+  let startMouseY = 0;
   let lastMouseX = 0;
   let lastMouseY = 0;
-  let mouseMoved = false;
+  let lastClickTime = 0;
+  let lastClickedCard = null;
 
   // Mouse move tracking
   const handleMouseMove = (e) => {
@@ -98,10 +104,14 @@ function initPhysics() {
     const currentY = e.clientY;
 
     if (draggedCard) {
-      // Track if mouse actually moved significantly
-      if (Math.abs(currentX - lastMouseX) > 3 || Math.abs(currentY - lastMouseY) > 3) {
-        mouseMoved = true;
+      // Calculate total distance from start position
+      const totalDistanceX = Math.abs(currentX - startMouseX);
+      const totalDistanceY = Math.abs(currentY - startMouseY);
+
+      // If moved more than 10 pixels total, it's a drag
+      if (!isDragging && (totalDistanceX > 10 || totalDistanceY > 10)) {
         isDragging = true;
+        console.log('Drag detected! Distance:', totalDistanceX, totalDistanceY);
       }
 
       // Update position if dragging
@@ -119,10 +129,11 @@ function initPhysics() {
 
   // Mouse down - start drag
   const handleMouseDown = (e) => {
-    mouseDownTime = Date.now();
-    mouseMoved = false;
+    startMouseX = e.clientX;
+    startMouseY = e.clientY;
     lastMouseX = e.clientX;
     lastMouseY = e.clientY;
+    isDragging = false;
 
     // Find card under mouse (check from top to bottom)
     for (let i = physicsCards.length - 1; i >= 0; i--) {
@@ -131,10 +142,6 @@ function initPhysics() {
         e.preventDefault(); // Prevent default link behavior
         draggedCard = card;
         card.isDragged = true;
-
-        // Store offset from card center
-        card.dragOffsetX = e.clientX - card.x;
-        card.dragOffsetY = e.clientY - card.y;
 
         // Bring to front
         physicsCards.splice(i, 1);
@@ -145,25 +152,48 @@ function initPhysics() {
     }
   };
 
-  // Mouse up - release or navigate
+  // Mouse up - release or check for double click
   const handleMouseUp = (e) => {
     if (draggedCard) {
-      // Only navigate if no significant movement occurred
-      if (!mouseMoved) {
-        window.location.href = draggedCard.href;
-      } else if (isDragging) {
-        // Apply throw velocity only if card was actually dragged
-        const throwPower = 0.5;
-        draggedCard.velocityX *= throwPower;
-        draggedCard.velocityY *= throwPower;
-      }
+      // Store whether we were dragging BEFORE resetting anything
+      const wasDragging = isDragging;
+      const clickedCard = draggedCard;
 
+      console.log('Mouse up - wasDragging:', wasDragging);
+
+      // Reset dragging state immediately
       draggedCard.isDragged = false;
-    }
+      draggedCard = null;
+      isDragging = false;
 
-    isDragging = false;
-    draggedCard = null;
-    mouseMoved = false;
+      if (wasDragging) {
+        // Apply throw velocity only if card was actually dragged
+        console.log('Applying throw velocity');
+        const throwPower = 0.5;
+        clickedCard.velocityX *= throwPower;
+        clickedCard.velocityY *= throwPower;
+      } else {
+        // Check for double click (within 300ms of last click on same card)
+        const currentTime = Date.now();
+        const timeSinceLastClick = currentTime - lastClickTime;
+
+        console.log('Click detected. Time since last click:', timeSinceLastClick, 'Same card?', lastClickedCard === clickedCard);
+
+        if (timeSinceLastClick < 300 && lastClickedCard === clickedCard) {
+          // Double click detected - navigate
+          console.log('Double click! Navigating...');
+          window.location.href = clickedCard.href;
+        } else {
+          // First click - just remember it
+          console.log('First click recorded');
+          lastClickTime = currentTime;
+          lastClickedCard = clickedCard;
+        }
+      }
+    } else {
+      // No card was grabbed, just reset
+      isDragging = false;
+    }
   };
 
   document.addEventListener('mousemove', handleMouseMove);

@@ -95,29 +95,32 @@ function initPhysics() {
   let startMouseY = 0;
   let lastMouseX = 0;
   let lastMouseY = 0;
+  let lastClickTime = 0;
+  let lastClickedCard = null;
 
   // Mouse move tracking
   const handleMouseMove = (e) => {
     const currentX = e.clientX;
     const currentY = e.clientY;
 
-    if (draggedCard && !isDragging) {
+    if (draggedCard) {
       // Calculate total distance from start position
       const totalDistanceX = Math.abs(currentX - startMouseX);
       const totalDistanceY = Math.abs(currentY - startMouseY);
 
       // If moved more than 10 pixels total, it's a drag
-      if (totalDistanceX > 10 || totalDistanceY > 10) {
+      if (!isDragging && (totalDistanceX > 10 || totalDistanceY > 10)) {
         isDragging = true;
+        console.log('Drag detected! Distance:', totalDistanceX, totalDistanceY);
       }
-    }
 
-    // Update position if dragging
-    if (draggedCard && isDragging) {
-      draggedCard.x = currentX;
-      draggedCard.y = currentY;
-      draggedCard.velocityX = currentX - lastMouseX;
-      draggedCard.velocityY = currentY - lastMouseY;
+      // Update position if dragging
+      if (isDragging) {
+        draggedCard.x = currentX;
+        draggedCard.y = currentY;
+        draggedCard.velocityX = currentX - lastMouseX;
+        draggedCard.velocityY = currentY - lastMouseY;
+      }
     }
 
     lastMouseX = currentX;
@@ -149,30 +152,48 @@ function initPhysics() {
     }
   };
 
-  // Mouse up - release or navigate
+  // Mouse up - release or check for double click
   const handleMouseUp = (e) => {
     if (draggedCard) {
-      // Store whether we were dragging
+      // Store whether we were dragging BEFORE resetting anything
       const wasDragging = isDragging;
+      const clickedCard = draggedCard;
 
-      // Only navigate if isDragging was never set to true
-      if (!wasDragging) {
-        window.location.href = draggedCard.href;
-      } else {
-        // Apply throw velocity only if card was actually dragged
-        const throwPower = 0.5;
-        draggedCard.velocityX *= throwPower;
-        draggedCard.velocityY *= throwPower;
-      }
+      console.log('Mouse up - wasDragging:', wasDragging);
 
+      // Reset dragging state immediately
       draggedCard.isDragged = false;
       draggedCard = null;
-    }
-
-    // Reset flags after a delay to prevent race conditions
-    setTimeout(() => {
       isDragging = false;
-    }, 10);
+
+      if (wasDragging) {
+        // Apply throw velocity only if card was actually dragged
+        console.log('Applying throw velocity');
+        const throwPower = 0.5;
+        clickedCard.velocityX *= throwPower;
+        clickedCard.velocityY *= throwPower;
+      } else {
+        // Check for double click (within 300ms of last click on same card)
+        const currentTime = Date.now();
+        const timeSinceLastClick = currentTime - lastClickTime;
+
+        console.log('Click detected. Time since last click:', timeSinceLastClick, 'Same card?', lastClickedCard === clickedCard);
+
+        if (timeSinceLastClick < 300 && lastClickedCard === clickedCard) {
+          // Double click detected - navigate
+          console.log('Double click! Navigating...');
+          window.location.href = clickedCard.href;
+        } else {
+          // First click - just remember it
+          console.log('First click recorded');
+          lastClickTime = currentTime;
+          lastClickedCard = clickedCard;
+        }
+      }
+    } else {
+      // No card was grabbed, just reset
+      isDragging = false;
+    }
   };
 
   document.addEventListener('mousemove', handleMouseMove);
