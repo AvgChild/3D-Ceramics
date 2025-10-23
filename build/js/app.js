@@ -111,7 +111,6 @@ function initPhysics() {
       // If moved more than 10 pixels total, it's a drag
       if (!isDragging && (totalDistanceX > 10 || totalDistanceY > 10)) {
         isDragging = true;
-        console.log('Drag detected! Distance:', totalDistanceX, totalDistanceY);
       }
 
       // Update position if dragging
@@ -159,8 +158,6 @@ function initPhysics() {
       const wasDragging = isDragging;
       const clickedCard = draggedCard;
 
-      console.log('Mouse up - wasDragging:', wasDragging);
-
       // Reset dragging state immediately
       draggedCard.isDragged = false;
       draggedCard = null;
@@ -168,7 +165,6 @@ function initPhysics() {
 
       if (wasDragging) {
         // Apply throw velocity only if card was actually dragged
-        console.log('Applying throw velocity');
         const throwPower = 0.5;
         clickedCard.velocityX *= throwPower;
         clickedCard.velocityY *= throwPower;
@@ -177,15 +173,11 @@ function initPhysics() {
         const currentTime = Date.now();
         const timeSinceLastClick = currentTime - lastClickTime;
 
-        console.log('Click detected. Time since last click:', timeSinceLastClick, 'Same card?', lastClickedCard === clickedCard);
-
         if (timeSinceLastClick < 300 && lastClickedCard === clickedCard) {
           // Double click detected - navigate
-          console.log('Double click! Navigating...');
           window.location.href = clickedCard.href;
         } else {
           // First click - just remember it
-          console.log('First click recorded');
           lastClickTime = currentTime;
           lastClickedCard = clickedCard;
         }
@@ -235,6 +227,12 @@ function createPhysicsCard(item, index, total) {
   cardElement.style.pointerEvents = 'auto';
   cardElement.style.transformOrigin = 'center center';
   cardElement.style.cursor = 'grab';
+
+  // Prevent default link behavior - we'll handle navigation manually
+  cardElement.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  });
 
   grid.appendChild(cardElement);
 

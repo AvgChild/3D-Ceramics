@@ -312,11 +312,13 @@ body{
 
 /* Footer Styles */
 .site-footer {
+  position: relative;
   background: linear-gradient(135deg, #0a0a15 0%, #1a1a2e 100%);
   padding: 2rem 0;
   margin-top: auto;
   box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.5);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 1;
 }
 
 .footer-content {
@@ -424,9 +426,10 @@ body {
   position: relative;
   width: 100%;
   min-height: calc(100vh - 200px);
-  overflow: hidden;
+  overflow: visible;
   padding: 0;
   margin: 0;
+  z-index: 10;
 }
 
 .grid canvas {
@@ -452,6 +455,8 @@ body {
   user-select: none;
   -webkit-user-select: none;
   will-change: transform;
+  position: relative;
+  z-index: 100;
 }
 
 .card:active {
