@@ -200,5 +200,18 @@
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DebbieKupinskyRabbitCup/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DebbieKupinskyRabbitCup/Debbie Kupinsky.obj"
+  },
+  {
+    "id": "JuliaGallowayCupBroken",
+    "title": "Julia Galloway Cup (Broken)",
+    "description": "Julia Galloway Soda Fired Cup (Broken)",
+    "tags": [
+      "soda fired",
+      "cup"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/JuliaGallowayCupBroken/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/JuliaGallowayCupBroken/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/JuliaGallowayCupBroken/Julia Galloway.obj"
   }
 ]
