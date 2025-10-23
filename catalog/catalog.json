@@ -251,5 +251,30 @@
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/PoseyBacopoulosEwer/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/PoseyBacopoulosEwer/Posey Bacopoulos.obj"
+  },
+  {
+    "id": "ChrisGustinTeabowl",
+    "title": "Chris Gustin Teabowl",
+    "description": "Anagama Fired Teabowl by Chris Gustin c.2008",
+    "tags": [
+      "wood-fired",
+      "teabowl"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ChrisGustinTeabowl/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ChrisGustinTeabowl/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ChrisGustinTeabowl/Chris Gustin Teabowl.obj"
+  },
+  {
+    "id": "AyumiHorieMug",
+    "title": "Ayumi Horie Mug",
+    "description": "Mug by Ayumi Horie c. 2007",
+    "tags": [
+      "mug"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AyumiHorieMug/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AyumiHorieMug/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AyumiHorieMug/Ayumi Horie.obj"
   }
 ]
