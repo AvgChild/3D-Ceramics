@@ -276,5 +276,57 @@
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AyumiHorieMug/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AyumiHorieMug/Ayumi Horie.obj"
+  },
+  {
+    "id": "DerekLarsonVessel",
+    "title": "Derek Larson Vessel",
+    "description": "Wood Fired Stoneware Vessel with Decal",
+    "tags": [
+      "woodfired",
+      "stoneware",
+      "decal"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DerekLarsonVessel/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DerekLarsonVessel/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DerekLarsonVessel/Derek Lawson.obj"
+  },
+  {
+    "id": "CathiJeffersonGarlicJar",
+    "title": "Cathi Jefferson Garlic Jar",
+    "description": "Garlic Jar by Cathi Jefferson *note: There is a nichrome wire handle on the lid that was not picked up by scanner.",
+    "tags": [
+      "jar"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/CathiJeffersonGarlicJar/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/CathiJeffersonGarlicJar/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/CathiJeffersonGarlicJar/Cathi Jefferson Garlic Jar.obj"
+  },
+  {
+    "id": "JuliaGallowayJar",
+    "title": "Julia Galloway Jar",
+    "description": "Soda fired jar by Julia Galloway",
+    "tags": [
+      "soda fired",
+      "jar"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/JuliaGallowayJar/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/JuliaGallowayJar/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/JuliaGallowayJar/Julia Galloway Jar.obj"
+  },
+  {
+    "id": "MichaelSmithTeapot",
+    "title": "Michael Smith Teapot",
+    "description": "Teapot by Michael Smith c. 1992, ^10 reduction",
+    "tags": [
+      "^10 reduction",
+      "teapot"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/MichaelSmithTeapot/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/MichaelSmithTeapot/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/MichaelSmithTeapot/Michael Smith Teapot.obj"
   }
 ]
