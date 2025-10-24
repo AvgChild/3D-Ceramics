@@ -4,9 +4,9 @@
     "title": "FuneralVase",
     "description": "Funeral vase. China. c. 8thc - 18thc",
     "tags": [
-      "Vase",
-      "Funeral",
-      "FuneralVase"
+      "vase",
+      "funeral",
+      "funeralvase"
     ],
     "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/FuneralVase/thumbnail.png",
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/FuneralVase/",
@@ -18,8 +18,8 @@
     "title": "DrydenWellsBowl",
     "description": "Soda fired bowl c. 2014",
     "tags": [
-      "Bowl",
-      "Soda Fired"
+      "bowl",
+      "soda fired"
     ],
     "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DrydenWellsBowl/thumbnail.jpg",
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DrydenWellsBowl/",
@@ -60,9 +60,9 @@
     "title": "Richard James Sculpture",
     "description": "Black Clay Sculpture depicting a figure. Made in the artist's time in graduate school at University of Kansas. c. 2014 Lawrence, KS",
     "tags": [
-      "Sculpture",
-      "Black",
-      "Unglazed"
+      "sculpture",
+      "black",
+      "unglazed"
     ],
     "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/RichardJamesSculpture/thumbnail.jpg",
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/RichardJamesSculpture/",
@@ -74,9 +74,9 @@
     "title": "Sam Jayne Bowl",
     "description": "Pinched bowl with face. c.2018 Cincinnati, OH",
     "tags": [
-      "White",
-      "Gloss",
-      "Bowl"
+      "white",
+      "gloss",
+      "bowl"
     ],
     "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/SamJayneBowl/thumbnail.jpg",
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/SamJayneBowl/",
@@ -88,10 +88,10 @@
     "title": "Dean Roper Ashtray",
     "description": "Lowfire ash tray with gold luster rim and decals. c.2022",
     "tags": [
-      "Luster",
-      "Decal",
-      "Ashtray",
-      "White"
+      "luster",
+      "decal",
+      "ashtray",
+      "white"
     ],
     "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DeanRoperAshtray/thumbnail.jpg",
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DeanRoperAshtray/",
@@ -103,8 +103,8 @@
     "title": "Marko Fields Vessel",
     "description": "Large spouted vessel. Built as a BFA at University of Kansas in 1996. Currently on view in University of Kansas Teaching Gallery. ",
     "tags": [
-      "Vessel",
-      "University of Kansas"
+      "vessel",
+      "university of kansas"
     ],
     "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/MarkoFieldsVessel/thumbnail.jpg",
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/MarkoFieldsVessel/",
@@ -116,8 +116,8 @@
     "title": "Peter Shire Mug",
     "description": "Splatter Mug by way of Echo Park Pottery c.2020. Slab built",
     "tags": [
-      "Slab",
-      "White"
+      "slab",
+      "white"
     ],
     "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/PeterShireMug/thumbnail.jpg",
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/PeterShireMug/",
@@ -129,8 +129,8 @@
     "title": "Vittorio Acabbo Vessel",
     "description": "Blue Vessel by Vittorio Acabbo c. 1981",
     "tags": [
-      "Blue",
-      "Vessel"
+      "blue",
+      "vessel"
     ],
     "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/VittorioAcabboVessel/thumbnail.jpg",
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/VittorioAcabboVessel/",
@@ -142,7 +142,7 @@
     "title": "Kyle Johns Form",
     "description": "Slip Cast Form by Kyle Johns",
     "tags": [
-      "Slip Cast"
+      "slip cast"
     ],
     "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/KyleJohnsForm/thumbnail.jpg",
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/KyleJohnsForm/",
@@ -154,8 +154,8 @@
     "title": "Warren MacKenzie Faceted Bowl",
     "description": "Faceted Bowl by Warren MacKenzie",
     "tags": [
-      "Faceted",
-      "Bowl"
+      "faceted",
+      "bowl"
     ],
     "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/WarrenMacKenzieFacetedBowl/thumbnail.jpg",
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/WarrenMacKenzieFacetedBowl/",
@@ -180,7 +180,7 @@
     "title": "Danny Meisinger Teabowl",
     "description": "Danny Meisinger Teabowl c. 2015",
     "tags": [
-      "Teabowl"
+      "teabowl"
     ],
     "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DannyMeisingerTeabowl/thumbnail.jpg",
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DannyMeisingerTeabowl/",
@@ -245,7 +245,7 @@
     "title": "Posey Bacopoulos Ewer",
     "description": "Ewer by Posey Bacopoulos c. 2005",
     "tags": [
-      "Ewer"
+      "ewer"
     ],
     "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/PoseyBacopoulosEwer/thumbnail.jpg",
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/PoseyBacopoulosEwer/",
@@ -340,5 +340,107 @@
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/JamieBatesSloneMask/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/JamieBatesSloneMask/Jamie Bates Slone.obj"
+  },
+  {
+    "id": "AderoWillardBowl",
+    "title": "Adero Willard Bowl",
+    "description": "Bowl with underglaze details by Adero Willard c.2018",
+    "tags": [
+      "underglaze",
+      "bowl"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AderoWillardBowl/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AderoWillardBowl/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AderoWillardBowl/Adero Willard.obj"
+  },
+  {
+    "id": "LindaChristiansonPlate",
+    "title": "Linda Christianson Plate",
+    "description": "Woodfired plate by Linda Christianson",
+    "tags": [
+      "woodfired",
+      "plate"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/LindaChristiansonPlate/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/LindaChristiansonPlate/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/LindaChristiansonPlate/Linda Christianson.obj"
+  },
+  {
+    "id": "BedeClarkeBottle",
+    "title": "Bede Clarke Bottle",
+    "description": "Woodfired bottle by Bede Clarke",
+    "tags": [
+      "woodfired",
+      "bottle"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/BedeClarkeBottle/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/BedeClarkeBottle/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/BedeClarkeBottle/Bede Clark Bottle.obj"
+  },
+  {
+    "id": "MinsooYuhBowl",
+    "title": "Minsoo Yuh Bowl",
+    "description": "Bowl by Minsoo Yuh c. 2018",
+    "tags": [
+      "bowl"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/MinsooYuhBowl/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/MinsooYuhBowl/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/MinsooYuhBowl/Minsoo Yuh.obj"
+  },
+  {
+    "id": "JosephZellerVessel",
+    "title": "Joseph Zeller Vessel",
+    "description": "^10 reduction ash glaze on stoneware. Large vessel by Joseph Zeller. c. 1995 ",
+    "tags": [
+      "^10",
+      "reduction"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/JosephZellerVessel/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/JosephZellerVessel/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/JosephZellerVessel/Joseph Zeller.obj"
+  },
+  {
+    "id": "ToddCeroAltSculpture",
+    "title": "Todd Cero-Alt Sculpture",
+    "description": "Zoomorphic sculpture by Todd Cero-Alt c. 2008",
+    "tags": [
+      "sculpture"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ToddCeroAltSculpture/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ToddCeroAltSculpture/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ToddCeroAltSculpture/Todd Cero-Alt.obj"
+  },
+  {
+    "id": "RoseSchreiberSculpture",
+    "title": "Rose Schreiber Sculpture",
+    "description": "sculpture by Rose Schreiber c. 2024",
+    "tags": [
+      "sculpture"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/RoseSchreiberSculpture/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/RoseSchreiberSculpture/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/RoseSchreiberSculpture/Rose Schrieber.obj"
+  },
+  {
+    "id": "AndrewMartinDish",
+    "title": "Andrew Martin Dish",
+    "description": "Slipcast porcelain dish ^10 c.1980's",
+    "tags": [
+      "^10",
+      "porcelain",
+      "slipcast"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AndrewMartinDish/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AndrewMartinDish/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AndrewMartinDish/Andrew Martin Slipcast Dish.obj"
   }
 ]

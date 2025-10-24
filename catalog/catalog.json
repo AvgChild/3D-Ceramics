@@ -340,5 +340,107 @@
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/JamieBatesSloneMask/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/JamieBatesSloneMask/Jamie Bates Slone.obj"
+  },
+  {
+    "id": "AderoWillardBowl",
+    "title": "Adero Willard Bowl",
+    "description": "Bowl with underglaze details by Adero Willard c.2018",
+    "tags": [
+      "underglaze",
+      "bowl"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AderoWillardBowl/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AderoWillardBowl/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AderoWillardBowl/Adero Willard.obj"
+  },
+  {
+    "id": "LindaChristiansonPlate",
+    "title": "Linda Christianson Plate",
+    "description": "Woodfired plate by Linda Christianson",
+    "tags": [
+      "woodfired",
+      "plate"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/LindaChristiansonPlate/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/LindaChristiansonPlate/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/LindaChristiansonPlate/Linda Christianson.obj"
+  },
+  {
+    "id": "BedeClarkeBottle",
+    "title": "Bede Clarke Bottle",
+    "description": "Woodfired bottle by Bede Clarke",
+    "tags": [
+      "woodfired",
+      "bottle"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/BedeClarkeBottle/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/BedeClarkeBottle/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/BedeClarkeBottle/Bede Clark Bottle.obj"
+  },
+  {
+    "id": "MinsooYuhBowl",
+    "title": "Minsoo Yuh Bowl",
+    "description": "Bowl by Minsoo Yuh c. 2018",
+    "tags": [
+      "bowl"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/MinsooYuhBowl/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/MinsooYuhBowl/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/MinsooYuhBowl/Minsoo Yuh.obj"
+  },
+  {
+    "id": "JosephZellerVessel",
+    "title": "Joseph Zeller Vessel",
+    "description": "^10 reduction ash glaze on stoneware. Large vessel by Joseph Zeller. c. 1995 ",
+    "tags": [
+      "^10",
+      "reduction"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/JosephZellerVessel/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/JosephZellerVessel/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/JosephZellerVessel/Joseph Zeller.obj"
+  },
+  {
+    "id": "ToddCeroAltSculpture",
+    "title": "Todd Cero-Alt Sculpture",
+    "description": "Zoomorphic sculpture by Todd Cero-Alt c. 2008",
+    "tags": [
+      "sculpture"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ToddCeroAltSculpture/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ToddCeroAltSculpture/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ToddCeroAltSculpture/Todd Cero-Alt.obj"
+  },
+  {
+    "id": "RoseSchreiberSculpture",
+    "title": "Rose Schreiber Sculpture",
+    "description": "sculpture by Rose Schreiber c. 2024",
+    "tags": [
+      "sculpture"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/RoseSchreiberSculpture/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/RoseSchreiberSculpture/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/RoseSchreiberSculpture/Rose Schrieber.obj"
+  },
+  {
+    "id": "AndrewMartinDish",
+    "title": "Andrew Martin Dish",
+    "description": "Slipcast porcelain dish ^10 c.1980's",
+    "tags": [
+      "^10",
+      "porcelain",
+      "slipcast"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AndrewMartinDish/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AndrewMartinDish/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AndrewMartinDish/Andrew Martin Slipcast Dish.obj"
   }
 ]
