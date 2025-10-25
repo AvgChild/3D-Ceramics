@@ -107,6 +107,11 @@ class ModelUploader {
       },
       {
         type: 'input',
+        name: 'website',
+        message: 'Artist website (optional):'
+      },
+      {
+        type: 'input',
         name: 'tags',
         message: 'Tags (comma-separated):',
         filter: (input) => input.split(',').map(tag => tag.trim()).filter(tag => tag.length > 0)
@@ -242,6 +247,7 @@ class ModelUploader {
         id: details.folderName,
         title: details.title,
         description: details.description,
+        website: details.website || undefined,
         tags: details.tags,
         thumb: `${cdnBaseUrl}/${folderPath}thumbnail.jpg`,
         root: `${cdnBaseUrl}/${folderPath}`,
