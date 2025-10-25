@@ -17,6 +17,7 @@
     "id": "DrydenWellsBowl",
     "title": "DrydenWellsBowl",
     "description": "Soda fired bowl c. 2014",
+    "website": "https://www.drydenwells.net/",
     "tags": [
       "bowl",
       "soda fired"
@@ -30,6 +31,7 @@
     "id": "ChrisAlveshereMug",
     "title": "Chris Alveshere Mug",
     "description": "^9 Mug with matte glaze on exterior and gloss liner glaze",
+    "website": "http://www.chrisalveshere.com/",
     "tags": [
       "^9",
       "mug"
@@ -43,6 +45,7 @@
     "id": "AdrienneEliadesCup",
     "title": "Adrienne Eliades Cup",
     "description": "^6 cup made with Laguna #16 Clay, Amaco underglaze, and a clear glaze. c.2016 Portland, Oregon",
+    "website": "https://www.adrienneeliades.com/",
     "tags": [
       "^6",
       "cup",
@@ -59,6 +62,7 @@
     "id": "RichardJamesSculpture",
     "title": "Richard James Sculpture",
     "description": "Black Clay Sculpture depicting a figure. Made in the artist's time in graduate school at University of Kansas. c. 2014 Lawrence, KS",
+    "website": "https://richardwjames.com/",
     "tags": [
       "sculpture",
       "black",
@@ -73,6 +77,7 @@
     "id": "SamJayneBowl",
     "title": "Sam Jayne Bowl",
     "description": "Pinched bowl with face. c.2018 Cincinnati, OH",
+    "website": "https://www.instagram.com/s.m.jayne/?hl=en",
     "tags": [
       "white",
       "gloss",
@@ -87,6 +92,7 @@
     "id": "DeanRoperAshtray",
     "title": "Dean Roper Ashtray",
     "description": "Lowfire ash tray with gold luster rim and decals. c.2022",
+    "website": "https://www.instagram.com/superchillandcool420/?hl=en",
     "tags": [
       "luster",
       "decal",
@@ -115,6 +121,7 @@
     "id": "PeterShireMug",
     "title": "Peter Shire Mug",
     "description": "Splatter Mug by way of Echo Park Pottery c.2020. Slab built",
+    "website": "https://petershirestudio.com/",
     "tags": [
       "slab",
       "white"
@@ -141,6 +148,7 @@
     "id": "KyleJohnsForm",
     "title": "Kyle Johns Form",
     "description": "Slip Cast Form by Kyle Johns",
+    "website": "https://www.kylejohnsceramics.com/",
     "tags": [
       "slip cast"
     ],
@@ -153,6 +161,7 @@
     "id": "WarrenMacKenzieFacetedBowl",
     "title": "Warren MacKenzie Faceted Bowl",
     "description": "Faceted Bowl by Warren MacKenzie",
+    "website": "https://www.warrenmackenziepottery.com/",
     "tags": [
       "faceted",
       "bowl"
@@ -166,6 +175,7 @@
     "id": "WarrenMacKenzieTeaBowl",
     "title": "Warren MacKenzie Tea Bowl",
     "description": "Tea Bowl by Warren MacKenzie",
+    "website": "https://www.warrenmackenziepottery.com/",
     "tags": [
       "teabowl",
       "shino"
@@ -179,6 +189,7 @@
     "id": "DannyMeisingerTeabowl",
     "title": "Danny Meisinger Teabowl",
     "description": "Danny Meisinger Teabowl c. 2015",
+    "website": "https://www.instagram.com/dannymeisinger/?hl=en",
     "tags": [
       "teabowl"
     ],
@@ -191,6 +202,7 @@
     "id": "DebbieKupinskyRabbitCup",
     "title": "Debbie Kupinsky Rabbit Cup",
     "description": "Debbie Kupinsky Rabbit Cup c. 2017 ^6 Porcelain",
+    "website": "https://www.debbiekupinsky.com/",
     "tags": [
       "porcelain",
       "^6",
@@ -205,6 +217,7 @@
     "id": "JuliaGallowayCupBroken",
     "title": "Julia Galloway Cup (Broken)",
     "description": "Julia Galloway Soda Fired Cup (Broken)",
+    "website": "https://juliagalloway.com/",
     "tags": [
       "soda fired",
       "cup"
@@ -218,6 +231,7 @@
     "id": "GillianParkeCup",
     "title": "Gillian Parke Cup",
     "description": "Cup by Gillian Parke c. 2017",
+    "website": "https://gillianparke.com/",
     "tags": [
       "cup"
     ],
@@ -230,6 +244,7 @@
     "id": "PoseyBacopoulosEwer",
     "title": "Posey Bacopoulos Ewer",
     "description": "Ewer by Posey Bacopoulos c. 2005",
+    "website": "http://www.poseybacopoulos.com/",
     "tags": [
       "ewer"
     ],
@@ -242,6 +257,7 @@
     "id": "ChrisGustinTeabowl",
     "title": "Chris Gustin Teabowl",
     "description": "Anagama Fired Teabowl by Chris Gustin c.2008",
+    "website": "https://gustinceramics.com/",
     "tags": [
       "wood-fired",
       "teabowl"
@@ -255,6 +271,7 @@
     "id": "AyumiHorieMug",
     "title": "Ayumi Horie Mug",
     "description": "Mug by Ayumi Horie c. 2007",
+    "website": "https://ayumihorie.com/",
     "tags": [
       "mug"
     ],
@@ -281,6 +298,7 @@
     "id": "CathiJeffersonGarlicJar",
     "title": "Cathi Jefferson Garlic Jar",
     "description": "Garlic Jar by Cathi Jefferson *note: There is a nichrome wire handle on the lid that was not picked up by scanner.",
+    "website": "http://www.cathijefferson.com/",
     "tags": [
       "jar"
     ],
@@ -293,6 +311,7 @@
     "id": "JuliaGallowayJar",
     "title": "Julia Galloway Jar",
     "description": "Soda fired jar by Julia Galloway",
+    "website": "https://juliagalloway.com/",
     "tags": [
       "soda fired",
       "jar"
@@ -319,6 +338,7 @@
     "id": "JamieBatesSloneMask",
     "title": "Jamie Bates Slone Mask",
     "description": "Mask by Jamie Bates Slone c. 2014",
+    "website": "https://www.jamiebatesslone.com/",
     "tags": [
       "sculpture"
     ],
@@ -331,6 +351,7 @@
     "id": "AderoWillardBowl",
     "title": "Adero Willard Bowl",
     "description": "Bowl with underglaze details by Adero Willard c.2018",
+    "website": "https://aderowillard.com/",
     "tags": [
       "underglaze",
       "bowl"
@@ -344,6 +365,7 @@
     "id": "LindaChristiansonPlate",
     "title": "Linda Christianson Plate",
     "description": "Woodfired plate by Linda Christianson",
+    "website": "https://www.christiansonpottery.com/",
     "tags": [
       "woodfired",
       "plate"
@@ -357,6 +379,7 @@
     "id": "BedeClarkeBottle",
     "title": "Bede Clarke Bottle",
     "description": "Woodfired bottle by Bede Clarke",
+    "website": "https://www.bedeclarke.com/",
     "tags": [
       "woodfired",
       "bottle"
@@ -370,6 +393,7 @@
     "id": "MinsooYuhBowl",
     "title": "Minsoo Yuh Bowl",
     "description": "Bowl by Minsoo Yuh c. 2018",
+    "website": "https://www.minsooyuhceramics.com/",
     "tags": [
       "bowl"
     ],
@@ -407,6 +431,7 @@
     "id": "RoseSchreiberSculpture",
     "title": "Rose Schreiber Sculpture",
     "description": "sculpture by Rose Schreiber c. 2024",
+    "website": "https://www.roseschreiber.com/about",
     "tags": [
       "sculpture"
     ],

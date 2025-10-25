@@ -340,6 +340,7 @@
         <div class="overview-section">
           <h3>Overview</h3>
           <p id="itemDesc">Loading…</p>
+          <p id="artistWebsite" style="margin-top: 8px;"></p>
         </div>
       </div>
 
@@ -374,6 +375,14 @@
 
     document.getElementById('itemTitle').textContent = item.title || 'Viewer';
     document.getElementById('itemDesc').textContent  = item.description || '';
+
+    // Display artist website if available
+    const websiteEl = document.getElementById('artistWebsite');
+    if (item.website) {
+      websiteEl.innerHTML = `<a href="${item.website}" target="_blank" rel="noopener noreferrer" style="color: #1e40af; text-decoration: underline;">Artist Website →</a>`;
+    } else {
+      websiteEl.innerHTML = '';
+    }
 
     const dlEl = document.getElementById('downloadBtn');
     if (item.download) {
