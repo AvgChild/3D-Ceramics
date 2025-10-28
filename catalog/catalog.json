@@ -453,5 +453,33 @@
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AndrewMartinDish/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AndrewMartinDish/Andrew Martin Slipcast Dish.obj"
+  },
+  {
+    "id": "AndyBraymanBisqueCup",
+    "title": "Andy Brayman Bisque Cup",
+    "description": "Bisque Fired Cup by Andy Brayman done as a visiting artist at KU in the 2000's",
+    "website": "https://www.artsy.net/artist/andy-brayman",
+    "tags": [
+      "bisque",
+      "cup"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AndyBraymanBisqueCup/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AndyBraymanBisqueCup/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AndyBraymanBisqueCup/AndyBraymanCup.obj"
+  },
+  {
+    "id": "AndyBraymanLiddedVessel",
+    "title": "Andy Brayman Lidded Vessel",
+    "description": "Lidded Vessel by Andy Brayman c.1995. This piece does not embody the nature of Andy's contemporary work but  convey's the lineage of his study through pottery.",
+    "website": "https://www.artsy.net/artist/andy-brayman",
+    "tags": [
+      "lid",
+      "vessel"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AndyBraymanLiddedVessel/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AndyBraymanLiddedVessel/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AndyBraymanLiddedVessel/Andy Brayman Lidded Vessel.obj"
   }
 ]
