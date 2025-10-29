@@ -37,3 +37,28 @@ function showDisclaimer() {
 
 loadCatalog().then(()=>render(true));
 showDisclaimer();
+
+// Visitor Counter
+async function updateVisitorCounter() {
+  try {
+    // Using CountAPI - a free, simple counter API
+    const response = await fetch('https://api.countapi.xyz/hit/clayarchive.site/visits');
+    const data = await response.json();
+    const count = data.value;
+
+    // Format the count with leading zeros (5 digits)
+    const countStr = count.toString().padStart(5, '0');
+    const digits = document.querySelectorAll('.counter-display .digit');
+
+    // Update each digit
+    for (let i = 0; i < digits.length && i < countStr.length; i++) {
+      digits[i].textContent = countStr[i];
+    }
+  } catch (error) {
+    console.log('Visitor counter unavailable');
+    // Keep showing zeros if API fails
+  }
+}
+
+// Update counter when page loads
+updateVisitorCounter();
