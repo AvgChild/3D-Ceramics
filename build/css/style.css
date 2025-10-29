@@ -351,8 +351,8 @@ body{
   margin-top: 1rem;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 8px 16px;
+  gap: 0.75rem;
+  padding: 10px 16px;
   background: linear-gradient(145deg, #1a1a2e, #0f0f23);
   border: 2px solid #58a6ff;
   border-radius: 6px;
@@ -367,30 +367,18 @@ body{
   letter-spacing: 0.5px;
 }
 
-.counter-display {
-  display: inline-flex;
-  gap: 2px;
-  background: #000;
-  padding: 4px 8px;
-  border-radius: 4px;
-  border: 1px solid #333;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.8);
+.visitor-counter a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 
-.counter-display .digit {
-  display: inline-block;
-  width: 16px;
-  height: 22px;
-  line-height: 22px;
-  text-align: center;
-  background: linear-gradient(180deg, #ff3333 0%, #cc0000 100%);
-  color: #000;
-  font-family: 'Courier New', monospace;
-  font-weight: bold;
-  font-size: 16px;
-  border-radius: 2px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+.visitor-counter img {
+  display: block;
+  height: 20px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
 }
 
 /* Main content wrapper */
