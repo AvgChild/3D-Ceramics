@@ -481,5 +481,111 @@
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AndyBraymanLiddedVessel/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/AndyBraymanLiddedVessel/Andy Brayman Lidded Vessel.obj"
+  },
+  {
+    "id": "BenAhlversHead",
+    "title": "Ben Ahlvers Head",
+    "description": "Head Sculpture (bisqued) done as a visiting artist at KU",
+    "website": "https://benahlvers.com/home.html",
+    "tags": [
+      "sculpture"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/BenAhlversHead/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/BenAhlversHead/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/BenAhlversHead/Ben Ahlvers.obj"
+  },
+  {
+    "id": "CathiJeffersonPitcher",
+    "title": "Cathi Jefferson Pitcher",
+    "description": "Pitcher thrown by Cathi Jefferson c. 2017. *Important to note that Cathi is a talented potter when it comes to wall thicknesses. This scan was incomplete and could not contain the inside of the vessel and is not a great representation of wall thickness. ",
+    "website": "http://www.cathijefferson.com/",
+    "tags": [
+      "Pitcher"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/CathiJeffersonPitcher/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/CathiJeffersonPitcher/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/CathiJeffersonPitcher/Cathi Jefferson Pitcher.obj"
+  },
+  {
+    "id": "DerekLarsonVessel2",
+    "title": "Derek Larson Vessel 2",
+    "description": "Vessle thrown by Derek Larson with Decal c. 2004 while getting his MFA at KU",
+    "tags": [
+      "vessel",
+      "decal"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DerekLarsonVessel2/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DerekLarsonVessel2/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DerekLarsonVessel2/DerekLarson2.obj"
+  },
+  {
+    "id": "JeffOestrichMug",
+    "title": "Jeff Oestrich Mug",
+    "description": "Mug thrown by Jeff Oestrich c. 2003",
+    "website": "http://www.oestreichpottery.com/",
+    "tags": [
+      "mug"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/JeffOestrichMug/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/JeffOestrichMug/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/JeffOestrichMug/Jeff Oestrich Mug.obj"
+  },
+  {
+    "id": "CraigCliffordCup",
+    "title": "Craig Clifford Cup",
+    "description": "Cup made by Craig Clifford featuring a 3d printed figure on the outside of the form. c.2017 * Due to the dark color of the inside of the cup, 3d scanning the interior was difficult. The model data is not an accurate represntation of the inside.",
+    "website": "https://www.instagram.com/craigcliffor/?hl=en",
+    "tags": [
+      "slipcast",
+      "cup"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/CraigCliffordCup/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/CraigCliffordCup/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/CraigCliffordCup/Craig Clifford.obj"
+  },
+  {
+    "id": "DavidVertacnikCandleHolder",
+    "title": "David Vertacnik Candle Holder",
+    "description": "Candle Holder by David Vertacnik while at KU",
+    "website": "https://www.davidvertacnik.com/",
+    "tags": [],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DavidVertacnikCandleHolder/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DavidVertacnikCandleHolder/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DavidVertacnikCandleHolder/David Vertacnik.obj"
+  },
+  {
+    "id": "JimmyEddingsSculpture",
+    "title": "Jimmy Eddings Sculpture",
+    "description": "Wood fired stoneware sculpture by Jimmy Eddings c.2009",
+    "website": "https://www.jimmyeddings.com/",
+    "tags": [
+      "sculpture",
+      "woodfired"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/JimmyEddingsSculpture/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/JimmyEddingsSculpture/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/JimmyEddingsSculpture/Jimmy Eddings.obj"
+  },
+  {
+    "id": "MitchellSpainHipFlask",
+    "title": "Mitchell Spain Hip Flask",
+    "description": "Slipcast hip flask with threaded lid by Mitchell Spain",
+    "website": "https://mitchellspainceramics.com/",
+    "tags": [
+      "slipcast",
+      "decal",
+      "threaded"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/MitchellSpainHipFlask/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/MitchellSpainHipFlask/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/MitchellSpainHipFlask/Mitchell spain.obj"
   }
 ]
