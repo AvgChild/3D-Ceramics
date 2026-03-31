@@ -692,5 +692,59 @@
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/WalterZurkoTeapot/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/WalterZurkoTeapot/Walter Zurko Teapot.obj"
+  },
+  {
+    "id": "RichardBatterhamTeapot",
+    "title": "Richard Batterham Teapot",
+    "description": "Teapot c.1993, stoneware, Leach apprentice",
+    "website": "https://en.wikipedia.org/wiki/Richard_Batterham",
+    "tags": [
+      "teapot",
+      "stoneware"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/RichardBatterhamTeapot/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/RichardBatterhamTeapot/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/RichardBatterhamTeapot/Richard Batterham Teapot.obj"
+  },
+  {
+    "id": "RobBarnardTeapot",
+    "title": "Rob Barnard Teapot",
+    "description": "teapot",
+    "website": "http://www.rob-barnard.com/",
+    "tags": [
+      "teapot"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/RobBarnardTeapot/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/RobBarnardTeapot/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/RobBarnardTeapot/Rob Barnard Teapot.obj"
+  },
+  {
+    "id": "RonMeyersBowl",
+    "title": "Ron Meyers Bowl",
+    "description": "Bowl, c.1993, Earthenware",
+    "website": "https://www.carbondaleclay.org/ron-meyers",
+    "tags": [
+      "Bowl",
+      "Earthenware"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/RonMeyersBowl/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/RonMeyersBowl/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/RonMeyersBowl/Ron Meyers Bowl.obj"
+  },
+  {
+    "id": "SandySimonVessel",
+    "title": "Sandy Simon Vessel",
+    "description": "Pouring Vessel, c.1990's, MacKenzie apprentice",
+    "website": "https://traxgallery.com/artists/sandy-simon/",
+    "tags": [
+      "vessel"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/SandySimonVessel/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/SandySimonVessel/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/SandySimonVessel/Sandy Simon Vessel.obj"
   }
 ]
