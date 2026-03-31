@@ -679,5 +679,18 @@
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/PaulDresangTeapot/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/PaulDresangTeapot/Paul Dresang Teapot.obj"
+  },
+  {
+    "id": "WalterZurkoTeapot",
+    "title": "Walter Zurko Teapot",
+    "description": "Teapot c.1985",
+    "website": "https://walterzurko.com/home.html",
+    "tags": [
+      "teapot"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/WalterZurkoTeapot/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/WalterZurkoTeapot/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/WalterZurkoTeapot/Walter Zurko Teapot.obj"
   }
 ]
