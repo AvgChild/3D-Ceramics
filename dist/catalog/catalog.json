@@ -624,5 +624,60 @@
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DanAndersonCup/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DanAndersonCup/Dan Anderson Cup.obj"
+  },
+  {
+    "id": "JohnGlickTeapot",
+    "title": "John Glick Teapot",
+    "description": "Teapot, c.1990, Salt Fired",
+    "website": "https://www.themarksproject.org/marks/glick",
+    "tags": [
+      "teapot",
+      "salt fired"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/JohnGlickTeapot/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/JohnGlickTeapot/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/JohnGlickTeapot/John Glick Teapot.obj"
+  },
+  {
+    "id": "JohnReeveTeapot",
+    "title": "John Reeve Teapot",
+    "description": "Teapot, Leach apprentice",
+    "website": "https://en.wikipedia.org/wiki/John_Reeve_(potter)",
+    "tags": [
+      "Teapot"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/JohnReeveTeapot/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/JohnReeveTeapot/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/JohnReeveTeapot/John Reeve Teapot.obj"
+  },
+  {
+    "id": "MarkFerrisTeapot",
+    "title": "Mark Ferris Teapot",
+    "description": "Earthenware Teapot",
+    "website": "https://bluefeatherpottery.com/",
+    "tags": [
+      "Teapot"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/MarkFerrisTeapot/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/MarkFerrisTeapot/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/MarkFerrisTeapot/Mark Ferris Teapot.obj"
+  },
+  {
+    "id": "PaulDresangTeapot",
+    "title": "Paul Dresang Teapot",
+    "description": "Teapot, c.1990 - 1994, Porcelain with celadon",
+    "website": "https://www.nccshop.org/collections/paul-dresang?srsltid=AfmBOoqaCYTR3GWR15jo2qs1mY_ozEYSp5ciZgutbFxbEdu30cwZnbSP",
+    "tags": [
+      "Teapot",
+      "porcelain",
+      "celadon"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/PaulDresangTeapot/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/PaulDresangTeapot/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/PaulDresangTeapot/Paul Dresang Teapot.obj"
   }
 ]
