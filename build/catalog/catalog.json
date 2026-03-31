@@ -585,5 +585,44 @@
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ByronTempleJar/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ByronTempleJar/Byron Temple Jar.obj"
+  },
+  {
+    "id": "ChrisGustinTeapot",
+    "title": "Chris Gustin Teapot",
+    "description": "Teapot 1985",
+    "website": "https://gustinceramics.com/",
+    "tags": [
+      "teapot"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ChrisGustinTeapot/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ChrisGustinTeapot/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ChrisGustinTeapot/Chris Gustin Teapot.obj"
+  },
+  {
+    "id": "ChrisStaleyVessel",
+    "title": "Chris Staley Vessel",
+    "description": "Porcelain with Black Glaze c. 1987",
+    "website": "https://www.chrisstaleyartist.com/portfolio",
+    "tags": [
+      "porcelain"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ChrisStaleyVessel/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ChrisStaleyVessel/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/ChrisStaleyVessel/Chris Staley Vessel.obj"
+  },
+  {
+    "id": "DanAndersonCup",
+    "title": "Dan Anderson Cup",
+    "description": "Porcelain cup (likely made for a demo) year unknown",
+    "website": "https://www.themarksproject.org/marks/anderson",
+    "tags": [
+      "porcelain"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DanAndersonCup/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DanAndersonCup/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/DanAndersonCup/Dan Anderson Cup.obj"
   }
 ]
