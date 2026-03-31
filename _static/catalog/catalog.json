@@ -746,5 +746,19 @@
     "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/SandySimonVessel/",
     "document": "scene.svx.json",
     "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/SandySimonVessel/Sandy Simon Vessel.obj"
+  },
+  {
+    "id": "WarrenMacKenziecup",
+    "title": "Warren MacKenzie cup",
+    "description": "Cup, Salt Glazed",
+    "website": "https://www.warrenmackenziepottery.com/",
+    "tags": [
+      "cup",
+      "Salt fired"
+    ],
+    "thumb": "https://1ceramicsga.sfo3.digitaloceanspaces.com/WarrenMacKenziecup/thumbnail.jpg",
+    "root": "https://1ceramicsga.sfo3.digitaloceanspaces.com/WarrenMacKenziecup/",
+    "document": "scene.svx.json",
+    "download": "https://1ceramicsga.sfo3.digitaloceanspaces.com/WarrenMacKenziecup/Warren MacKenzie Cup.obj"
   }
 ]
