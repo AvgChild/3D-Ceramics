@@ -18,7 +18,17 @@
       "WebFetch(domain:www.hitwebcounter.com)",
       "Bash(for dir:*)",
       "Bash(do cp:*)",
-      "Bash(done)"
+      "Bash(done)",
+      "WebFetch(domain:www.common.co)",
+      "WebFetch(domain:common.co)",
+      "WebSearch",
+      "WebFetch(domain:common.com)",
+      "WebFetch(domain:hilcodigital.com)",
+      "WebFetch(domain:forsale.godaddy.com)",
+      "Bash(do)",
+      "Bash(cp \"/c/Users/mhb86/Downloads/3D-Ceramics-1/css/style.css\" \"/c/Users/mhb86/Downloads/3D-Ceramics-1/$dir/css/style.css\")",
+      "Bash(cp \"/c/Users/mhb86/Downloads/3D-Ceramics-1/index.html\" \"/c/Users/mhb86/Downloads/3D-Ceramics-1/$dir/index.html\")",
+      "Bash(cp \"/c/Users/mhb86/Downloads/3D-Ceramics-1/about.html\" \"/c/Users/mhb86/Downloads/3D-Ceramics-1/$dir/about.html\")"
     ],
     "deny": [],
     "ask": []
