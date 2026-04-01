@@ -15,7 +15,10 @@
       "Bash(mkdir:*)",
       "Bash(cp:*)",
       "WebFetch(domain:api.countapi.xyz)",
-      "WebFetch(domain:www.hitwebcounter.com)"
+      "WebFetch(domain:www.hitwebcounter.com)",
+      "Bash(for dir:*)",
+      "Bash(do cp:*)",
+      "Bash(done)"
     ],
     "deny": [],
     "ask": []
